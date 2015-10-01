@@ -7,6 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		844E0A901BBBB9C100D5A582 /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A8F1BBBB9C100D5A582 /* Rest.swift */; settings = {ASSET_TAGS = (); }; };
+		844E0A931BBBC26F00D5A582 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A921BBBC26F00D5A582 /* SlideMenuController.swift */; settings = {ASSET_TAGS = (); }; };
+		844E0A951BBBC99100D5A582 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A941BBBC99100D5A582 /* MenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		844E0A971BBBCBB700D5A582 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A961BBBCBB700D5A582 /* ScheduleViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		844E0A991BBBCBC800D5A582 /* ExerciseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A981BBBCBC800D5A582 /* ExerciseViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		844E0A9B1BBBCBF800D5A582 /* ProgressionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A9A1BBBCBF800D5A582 /* ProgressionViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		844E0A9D1BBBCC1300D5A582 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A9C1BBBCC1300D5A582 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		844E0A9F1BBC2D0A00D5A582 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A9E1BBC2D0A00D5A582 /* ScheduleCell.swift */; settings = {ASSET_TAGS = (); }; };
+		84547A891BBA84EF00476EE8 /* HomeDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A881BBA84EF00476EE8 /* HomeDisplayCell.swift */; settings = {ASSET_TAGS = (); }; };
+		84547A8C1BBA872900476EE8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A8B1BBA872900476EE8 /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		84547A901BBA91C600476EE8 /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A8F1BBA91C600476EE8 /* Movement.swift */; settings = {ASSET_TAGS = (); }; };
+		84547A921BBA932B00476EE8 /* Exercise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A911BBA932B00476EE8 /* Exercise.swift */; settings = {ASSET_TAGS = (); }; };
+		84547A951BBA9A5700476EE8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A941BBA9A5700476EE8 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		84547A981BBA9D8500476EE8 /* Pushup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A971BBA9D8500476EE8 /* Pushup.swift */; settings = {ASSET_TAGS = (); }; };
+		84547A9A1BBABCDB00476EE8 /* Squat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A991BBABCDB00476EE8 /* Squat.swift */; settings = {ASSET_TAGS = (); }; };
+		84547A9C1BBABCEC00476EE8 /* Pullup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A9B1BBABCEC00476EE8 /* Pullup.swift */; settings = {ASSET_TAGS = (); }; };
+		84547A9E1BBABCFC00476EE8 /* LegRaise.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A9D1BBABCFC00476EE8 /* LegRaise.swift */; settings = {ASSET_TAGS = (); }; };
+		84547AA01BBABD0B00476EE8 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A9F1BBABD0B00476EE8 /* Bridge.swift */; settings = {ASSET_TAGS = (); }; };
+		84547AA21BBABD1D00476EE8 /* Handstand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547AA11BBABD1D00476EE8 /* Handstand.swift */; settings = {ASSET_TAGS = (); }; };
+		84547AA51BBAD8F000476EE8 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547AA41BBAD8F000476EE8 /* Training.swift */; settings = {ASSET_TAGS = (); }; };
 		84EE4C271BB97FE50098BC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4C261BB97FE50098BC01 /* AppDelegate.swift */; };
 		84EE4C291BB97FE50098BC01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4C281BB97FE50098BC01 /* ViewController.swift */; };
 		84EE4C2C1BB97FE50098BC01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EE4C2A1BB97FE50098BC01 /* Main.storyboard */; };
@@ -15,6 +35,7 @@
 		84EE4C341BB97FE50098BC01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EE4C321BB97FE50098BC01 /* LaunchScreen.storyboard */; };
 		84EE4C3F1BB97FE50098BC01 /* CCTrackerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4C3E1BB97FE50098BC01 /* CCTrackerTests.swift */; };
 		84EE4C4A1BB97FE50098BC01 /* CCTrackerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4C491BB97FE50098BC01 /* CCTrackerUITests.swift */; };
+		84EE4C5E1BB986E20098BC01 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84EE4C5D1BB986E20098BC01 /* Icons.xcassets */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +56,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		844E0A8F1BBBB9C100D5A582 /* Rest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rest.swift; path = Model/Classes/Business/Rest.swift; sourceTree = "<group>"; };
+		844E0A921BBBC26F00D5A582 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuController.swift; sourceTree = "<group>"; };
+		844E0A941BBBC99100D5A582 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Controllers/MenuViewController.swift; sourceTree = "<group>"; };
+		844E0A961BBBCBB700D5A582 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = Controllers/ScheduleViewController.swift; sourceTree = "<group>"; };
+		844E0A981BBBCBC800D5A582 /* ExerciseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseViewController.swift; path = Controllers/ExerciseViewController.swift; sourceTree = "<group>"; };
+		844E0A9A1BBBCBF800D5A582 /* ProgressionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressionViewController.swift; path = Controllers/ProgressionViewController.swift; sourceTree = "<group>"; };
+		844E0A9C1BBBCC1300D5A582 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
+		844E0A9E1BBC2D0A00D5A582 /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleCell.swift; path = Controllers/Cells/ScheduleCell.swift; sourceTree = "<group>"; };
+		84547A881BBA84EF00476EE8 /* HomeDisplayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeDisplayCell.swift; path = Controllers/Cells/HomeDisplayCell.swift; sourceTree = "<group>"; };
+		84547A8B1BBA872900476EE8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeViewController.swift; sourceTree = "<group>"; };
+		84547A8F1BBA91C600476EE8 /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movement.swift; path = Model/Classes/Business/Movement.swift; sourceTree = "<group>"; };
+		84547A911BBA932B00476EE8 /* Exercise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Exercise.swift; path = Model/Classes/Business/Exercise.swift; sourceTree = "<group>"; };
+		84547A941BBA9A5700476EE8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		84547A971BBA9D8500476EE8 /* Pushup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pushup.swift; path = Model/Classes/Business/Pushup.swift; sourceTree = "<group>"; };
+		84547A991BBABCDB00476EE8 /* Squat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Squat.swift; path = Model/Classes/Business/Squat.swift; sourceTree = "<group>"; };
+		84547A9B1BBABCEC00476EE8 /* Pullup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Pullup.swift; path = Model/Classes/Business/Pullup.swift; sourceTree = "<group>"; };
+		84547A9D1BBABCFC00476EE8 /* LegRaise.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LegRaise.swift; path = Model/Classes/Business/LegRaise.swift; sourceTree = "<group>"; };
+		84547A9F1BBABD0B00476EE8 /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bridge.swift; path = Model/Classes/Business/Bridge.swift; sourceTree = "<group>"; };
+		84547AA11BBABD1D00476EE8 /* Handstand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Handstand.swift; path = Model/Classes/Business/Handstand.swift; sourceTree = "<group>"; };
+		84547AA41BBAD8F000476EE8 /* Training.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Training.swift; path = Model/Classes/Business/Training.swift; sourceTree = "<group>"; };
 		84EE4C231BB97FE50098BC01 /* CCTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EE4C261BB97FE50098BC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EE4C281BB97FE50098BC01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +90,7 @@
 		84EE4C451BB97FE50098BC01 /* CCTrackerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CCTrackerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EE4C491BB97FE50098BC01 /* CCTrackerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCTrackerUITests.swift; sourceTree = "<group>"; };
 		84EE4C4B1BB97FE50098BC01 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84EE4C5D1BB986E20098BC01 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,6 +118,72 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		844E0A911BBBC24300D5A582 /* SlideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				844E0A921BBBC26F00D5A582 /* SlideMenuController.swift */,
+				844E0A941BBBC99100D5A582 /* MenuViewController.swift */,
+			);
+			name = SlideMenu;
+			sourceTree = "<group>";
+		};
+		8453CB3C1BBD5E4E00221659 /* External */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = External;
+			sourceTree = "<group>";
+		};
+		84547A8A1BBA84F300476EE8 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				84547A881BBA84EF00476EE8 /* HomeDisplayCell.swift */,
+				844E0A9E1BBC2D0A00D5A582 /* ScheduleCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		84547A8D1BBA918E00476EE8 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				84547A8E1BBA91A400476EE8 /* Business */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		84547A8E1BBA91A400476EE8 /* Business */ = {
+			isa = PBXGroup;
+			children = (
+				84547AA31BBAD8AE00476EE8 /* Training */,
+				84547A961BBA9D6800476EE8 /* Movements */,
+			);
+			name = Business;
+			sourceTree = "<group>";
+		};
+		84547A961BBA9D6800476EE8 /* Movements */ = {
+			isa = PBXGroup;
+			children = (
+				84547A911BBA932B00476EE8 /* Exercise.swift */,
+				84547A8F1BBA91C600476EE8 /* Movement.swift */,
+				84547A971BBA9D8500476EE8 /* Pushup.swift */,
+				84547A991BBABCDB00476EE8 /* Squat.swift */,
+				84547A9B1BBABCEC00476EE8 /* Pullup.swift */,
+				84547A9D1BBABCFC00476EE8 /* LegRaise.swift */,
+				84547A9F1BBABD0B00476EE8 /* Bridge.swift */,
+				84547AA11BBABD1D00476EE8 /* Handstand.swift */,
+				844E0A8F1BBBB9C100D5A582 /* Rest.swift */,
+			);
+			name = Movements;
+			sourceTree = "<group>";
+		};
+		84547AA31BBAD8AE00476EE8 /* Training */ = {
+			isa = PBXGroup;
+			children = (
+				84547AA41BBAD8F000476EE8 /* Training.swift */,
+			);
+			name = Training;
+			sourceTree = "<group>";
+		};
 		84EE4C1A1BB97FE50098BC01 = {
 			isa = PBXGroup;
 			children = (
@@ -100,12 +208,12 @@
 			isa = PBXGroup;
 			children = (
 				84EE4C261BB97FE50098BC01 /* AppDelegate.swift */,
-				84EE4C281BB97FE50098BC01 /* ViewController.swift */,
-				84EE4C2A1BB97FE50098BC01 /* Main.storyboard */,
-				84EE4C301BB97FE50098BC01 /* Assets.xcassets */,
-				84EE4C321BB97FE50098BC01 /* LaunchScreen.storyboard */,
-				84EE4C351BB97FE50098BC01 /* Info.plist */,
-				84EE4C2D1BB97FE50098BC01 /* CCTracker.xcdatamodeld */,
+				84EE4C571BB983D90098BC01 /* Controllers */,
+				84EE4C581BB983E20098BC01 /* Interface */,
+				84EE4C591BB983EB0098BC01 /* Model */,
+				84EE4C5A1BB983F20098BC01 /* Resources */,
+				84EE4C5B1BB983FE0098BC01 /* Supporting Files */,
+				84547A941BBA9A5700476EE8 /* Constants.swift */,
 			);
 			path = CCTracker;
 			sourceTree = "<group>";
@@ -126,6 +234,65 @@
 				84EE4C4B1BB97FE50098BC01 /* Info.plist */,
 			);
 			path = CCTrackerUITests;
+			sourceTree = "<group>";
+		};
+		84EE4C571BB983D90098BC01 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				844E0A911BBBC24300D5A582 /* SlideMenu */,
+				84547A8A1BBA84F300476EE8 /* Cells */,
+				84EE4C281BB97FE50098BC01 /* ViewController.swift */,
+				84547A8B1BBA872900476EE8 /* HomeViewController.swift */,
+				844E0A961BBBCBB700D5A582 /* ScheduleViewController.swift */,
+				844E0A981BBBCBC800D5A582 /* ExerciseViewController.swift */,
+				844E0A9A1BBBCBF800D5A582 /* ProgressionViewController.swift */,
+				844E0A9C1BBBCC1300D5A582 /* SettingsViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		84EE4C581BB983E20098BC01 /* Interface */ = {
+			isa = PBXGroup;
+			children = (
+				84EE4C2A1BB97FE50098BC01 /* Main.storyboard */,
+				84EE4C321BB97FE50098BC01 /* LaunchScreen.storyboard */,
+			);
+			name = Interface;
+			sourceTree = "<group>";
+		};
+		84EE4C591BB983EB0098BC01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8453CB3C1BBD5E4E00221659 /* External */,
+				84547A8D1BBA918E00476EE8 /* Classes */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		84EE4C5A1BB983F20098BC01 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				84EE4C5C1BB986B40098BC01 /* Images */,
+				84EE4C2D1BB97FE50098BC01 /* CCTracker.xcdatamodeld */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		84EE4C5B1BB983FE0098BC01 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				84EE4C351BB97FE50098BC01 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84EE4C5C1BB986B40098BC01 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				84EE4C301BB97FE50098BC01 /* Assets.xcassets */,
+				84EE4C5D1BB986E20098BC01 /* Icons.xcassets */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +400,7 @@
 			files = (
 				84EE4C341BB97FE50098BC01 /* LaunchScreen.storyboard in Resources */,
 				84EE4C311BB97FE50098BC01 /* Assets.xcassets in Resources */,
+				84EE4C5E1BB986E20098BC01 /* Icons.xcassets in Resources */,
 				84EE4C2C1BB97FE50098BC01 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,9 +426,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84547A9A1BBABCDB00476EE8 /* Squat.swift in Sources */,
+				84547AA21BBABD1D00476EE8 /* Handstand.swift in Sources */,
+				84547A9E1BBABCFC00476EE8 /* LegRaise.swift in Sources */,
+				844E0A901BBBB9C100D5A582 /* Rest.swift in Sources */,
+				84547A8C1BBA872900476EE8 /* HomeViewController.swift in Sources */,
+				844E0A9B1BBBCBF800D5A582 /* ProgressionViewController.swift in Sources */,
+				844E0A931BBBC26F00D5A582 /* SlideMenuController.swift in Sources */,
+				844E0A9F1BBC2D0A00D5A582 /* ScheduleCell.swift in Sources */,
+				844E0A991BBBCBC800D5A582 /* ExerciseViewController.swift in Sources */,
+				84547AA51BBAD8F000476EE8 /* Training.swift in Sources */,
+				84547A901BBA91C600476EE8 /* Movement.swift in Sources */,
 				84EE4C2F1BB97FE50098BC01 /* CCTracker.xcdatamodeld in Sources */,
 				84EE4C291BB97FE50098BC01 /* ViewController.swift in Sources */,
+				84547A981BBA9D8500476EE8 /* Pushup.swift in Sources */,
+				844E0A9D1BBBCC1300D5A582 /* SettingsViewController.swift in Sources */,
+				844E0A971BBBCBB700D5A582 /* ScheduleViewController.swift in Sources */,
 				84EE4C271BB97FE50098BC01 /* AppDelegate.swift in Sources */,
+				84547AA01BBABD0B00476EE8 /* Bridge.swift in Sources */,
+				844E0A951BBBC99100D5A582 /* MenuViewController.swift in Sources */,
+				84547A921BBA932B00476EE8 /* Exercise.swift in Sources */,
+				84547A891BBA84EF00476EE8 /* HomeDisplayCell.swift in Sources */,
+				84547A951BBA9A5700476EE8 /* Constants.swift in Sources */,
+				84547A9C1BBABCEC00476EE8 /* Pullup.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +539,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -389,7 +577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -404,6 +592,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arteries.CCTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -415,6 +604,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.arteries.CCTracker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -485,6 +675,7 @@
 				84EE4C501BB97FE50098BC01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84EE4C511BB97FE50098BC01 /* Build configuration list for PBXNativeTarget "CCTrackerTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +684,7 @@
 				84EE4C531BB97FE50098BC01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		84EE4C541BB97FE50098BC01 /* Build configuration list for PBXNativeTarget "CCTrackerUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +693,7 @@
 				84EE4C561BB97FE50098BC01 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
