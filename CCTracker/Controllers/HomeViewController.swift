@@ -39,6 +39,8 @@ class HomeViewController: UIViewController  {
     super.didReceiveMemoryWarning()
   }
   
+  //MARK: Methods
+  
   func loadTraining(){
     todaysTraining = training.readTodaysTraining()
     if todaysTraining.count > 0 {
@@ -71,15 +73,21 @@ class HomeViewController: UIViewController  {
     if currentMovement.name == Movements.Rest {
       cell.lblExerciseName?.text = String(format: "%@", currentMovement.name)
     }else {
-      cell.lblExerciseName?.text = String(format: "%@: %@", "Step Seven", currentMovement.name)
+      let stepInfo = currentMovement.getStepInfo()
+      cell.lblExerciseName?.text = String(format: "%@: %@", stepInfo[0],stepInfo[1])
     }
-    
     
     print("\(cell.lblExerciseName?.text)")
     return cell
   }
   
+  //MARK: - IBActions Methods
   @IBAction func selectTraining(sender: AnyObject) {
     delegate?.changeViewController(LeftMenu.Schedule)
   }
+
+  @IBAction func StartTraining(sender: AnyObject) {
+    delegate?.changeViewController(LeftMenu.Exercise)
+  }
+  
 }

@@ -11,7 +11,7 @@ import Foundation
 class Bridge: Movement {
   
   init() {
-    super.init(movementName: Movements.Bridge, movementIcon: Icons.whiteBridge)
+    super.init(movementName: Movements.Bridge, movementIcon: Icons.whiteBridge, currentStep: userWorkout.getCurrentStepforMovement(Movements.Bridge))
     
     self.exercises.append(Exercise(exerciseName: BridgeSteps.stepOne, step: Steps.stepOne, progressionGoals: BridgeGoal.stepOne, videoAddress: "", imgDescriptions: []))
     self.exercises.append(Exercise(exerciseName: BridgeSteps.stepTwo, step: Steps.stepTwo, progressionGoals: BridgeGoal.stepTwo, videoAddress: "", imgDescriptions: []))

@@ -11,7 +11,7 @@ import Foundation
 class Handstand: Movement {
   
   init() {
-    super.init(movementName: Movements.Handstand, movementIcon: Icons.whiteHandstand)
+    super.init(movementName: Movements.Handstand, movementIcon: Icons.whiteHandstand, currentStep: userWorkout.getCurrentStepforMovement(Movements.Handstand))
     
     self.exercises.append(Exercise(exerciseName: HandstandSteps.stepOne, step: Steps.stepOne, progressionGoals: HandstandGoal.stepOne, videoAddress: "", imgDescriptions: []))
     self.exercises.append(Exercise(exerciseName: HandstandSteps.stepTwo, step: Steps.stepTwo, progressionGoals: HandstandGoal.stepTwo, videoAddress: "", imgDescriptions: []))

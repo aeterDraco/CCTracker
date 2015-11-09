@@ -11,7 +11,7 @@ import Foundation
 class Squat: Movement {
   
   init() {
-    super.init(movementName: Movements.Squat, movementIcon: Icons.whiteSquat)
+    super.init(movementName: Movements.Squat, movementIcon: Icons.whiteSquat, currentStep: userWorkout.getCurrentStepforMovement(Movements.Squat))
     
     self.exercises.append(Exercise(exerciseName: SquatsSteps.stepOne, step: Steps.stepOne, progressionGoals: SquatsGoal.stepOne, videoAddress: "", imgDescriptions: []))
     self.exercises.append(Exercise(exerciseName: SquatsSteps.stepTwo, step: Steps.stepTwo, progressionGoals: SquatsGoal.stepTwo, videoAddress: "", imgDescriptions: []))

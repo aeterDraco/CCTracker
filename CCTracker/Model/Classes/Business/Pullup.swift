@@ -11,7 +11,7 @@ import Foundation
 class Pullup: Movement {
   
   init() {
-    super.init(movementName: Movements.Pullup, movementIcon: Icons.whitePullup)
+    super.init(movementName: Movements.Pullup, movementIcon: Icons.whitePullup, currentStep: userWorkout.getCurrentStepforMovement(Movements.Pullup))
     
     self.exercises.append(Exercise(exerciseName: PullupsSteps.stepOne, step: Steps.stepOne, progressionGoals: PullupsGoal.stepOne, videoAddress: "", imgDescriptions: []))
     self.exercises.append(Exercise(exerciseName: PullupsSteps.stepTwo, step: Steps.stepTwo, progressionGoals: PullupsGoal.stepTwo, videoAddress: "", imgDescriptions: []))

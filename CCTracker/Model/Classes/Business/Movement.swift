@@ -14,10 +14,20 @@ class Movement{
   var name: String
   var exercises = [Exercise]()
   var iconMovement: UIImage
+  var currentStep:Int
   
-  init (movementName name:String, movementIcon icon:String){
+  init (movementName name:String, movementIcon icon:String, currentStep:Int){
     self.name = name
+    self.currentStep = currentStep
     iconMovement = UIImage(named: icon)!
+  }
+
+
+  internal func getStepInfo() ->[String] {
+    var info = [String]()
+    info.append(stepNames[currentStep])
+    info.append(exercises[currentStep].name)
+    return info
   }
   
 }

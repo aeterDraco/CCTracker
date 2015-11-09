@@ -9,9 +9,17 @@
 import Foundation
 
 class Training {
+  
+  var workout = [String:[Movement]]()
+  var workoutName = String()
  
   init(){
-    
+    workout = getWorkoutSchedule()
+    workoutName = getWorkoutName()
+  }
+
+  func currentStepForMovement(movementName:String) ->Int {
+    return userWorkout.getCurrentStepforMovement(movementName)
   }
   
   //This function returns all the workouth schedule
@@ -33,21 +41,28 @@ class Training {
       return String()
     }
   }
+  
+  func workoutList() -> [Movement] {
+    var list = [Movement]()
+    list.append(Pushup())
+    list.append(Squat())
+    list.append(Pullup())
+    list.append(LegRaise())
+    list.append(Bridge())
+    list.append(Handstand())
+    
+    return list
+  }
 
   
   //This function reads the stored workout program and returns an array whit the movemnts for the day
   func readTodaysTraining() ->[Movement] {
-    let defaults = NSUserDefaults.standardUserDefaults()
-    if let scheduleData = defaults.dictionaryForKey(Defaults.schedule) as? [String:[String]]{
-      let schedule:[String:[Movement]] = createTrainingFromDictionary(scheduleData)
-      return schedule[getTodayKey()]!
-    }else{
-      return [Movement]()
-    }
+    return workout[getTodayKey()]!
   }
   
   //Saving a workout
   func saveWorkout(workout:[String:[Movement]], workoutName:String) -> Bool {
+    self.workout = workout
     let workoutToSave = createDictionaryFromTraining(workout)
     let defaults = NSUserDefaults.standardUserDefaults()
     defaults.setObject(workoutToSave, forKey: Defaults.schedule)
@@ -278,6 +293,5 @@ class Training {
 
     return workout
   }
-
   
 }

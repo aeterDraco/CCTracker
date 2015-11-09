@@ -11,7 +11,7 @@ import Foundation
 class LegRaise: Movement {
   
   init() {
-    super.init(movementName: Movements.LegRaise, movementIcon: Icons.whiteLegRaise)
+    super.init(movementName: Movements.LegRaise, movementIcon: Icons.whiteLegRaise, currentStep: userWorkout.getCurrentStepforMovement(Movements.LegRaise))
     
     self.exercises.append(Exercise(exerciseName: LegRaiseSteps.stepOne, step: Steps.stepOne, progressionGoals: LegRaiseGoal.stepOne, videoAddress: "", imgDescriptions: []))
     self.exercises.append(Exercise(exerciseName: LegRaiseSteps.stepTwo, step: Steps.stepTwo, progressionGoals: LegRaiseGoal.stepTwo, videoAddress: "", imgDescriptions: []))

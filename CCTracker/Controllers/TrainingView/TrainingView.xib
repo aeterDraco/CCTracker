@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TrainingView" customModule="CCTracker" customModuleProvider="target">
+            <connections>
+                <outlet property="view" destination="iN0-l3-epB" id="Obj-rf-gIR"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="401" height="500"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="f3n-NS-2dQ">
+                    <rect key="frame" x="154" y="236" width="94" height="29"/>
+                </stepper>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpr-MG-Vd3">
+                    <rect key="frame" x="0.0" y="215" width="401" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xfc-6o-e65">
+                    <rect key="frame" x="8" y="48" width="51" height="31"/>
+                </switch>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ccBanner" translatesAutoresizingMaskIntoConstraints="NO" id="jxe-9R-NyX">
+                    <rect key="frame" x="80" y="8" width="240" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="jxe-9R-NyX" secondAttribute="height" multiplier="6:5" id="Vwm-A2-HS5"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jxe-9R-NyX" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="0m1-r4-Ecd"/>
+                <constraint firstItem="dpr-MG-Vd3" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3h7-FG-MsJ"/>
+                <constraint firstItem="jxe-9R-NyX" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" multiplier="0.6" id="4GQ-dG-bLR"/>
+                <constraint firstItem="f3n-NS-2dQ" firstAttribute="top" secondItem="dpr-MG-Vd3" secondAttribute="bottom" id="Dk9-BS-M0V"/>
+                <constraint firstItem="jxe-9R-NyX" firstAttribute="leading" secondItem="xfc-6o-e65" secondAttribute="trailing" constant="23" id="FrI-wv-GzT"/>
+                <constraint firstItem="f3n-NS-2dQ" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QsP-hk-3X6"/>
+                <constraint firstItem="xfc-6o-e65" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="48" id="S5u-Rb-6ns"/>
+                <constraint firstAttribute="trailing" secondItem="dpr-MG-Vd3" secondAttribute="trailing" id="cHk-If-O40"/>
+                <constraint firstItem="jxe-9R-NyX" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cHu-Qc-2l3"/>
+                <constraint firstItem="xfc-6o-e65" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="rrV-ZW-Usg"/>
+                <constraint firstItem="dpr-MG-Vd3" firstAttribute="top" secondItem="jxe-9R-NyX" secondAttribute="bottom" constant="59" id="tCG-FG-sI2"/>
+                <constraint firstItem="f3n-NS-2dQ" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vOc-jH-IJA"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="tCG-FG-sI2"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="428.5" y="433"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ccBanner" width="150" height="85"/>
+    </resources>
+</document>

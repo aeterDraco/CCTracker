@@ -15,6 +15,7 @@
 		844E0A9B1BBBCBF800D5A582 /* ProgressionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A9A1BBBCBF800D5A582 /* ProgressionViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		844E0A9D1BBBCC1300D5A582 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A9C1BBBCC1300D5A582 /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		844E0A9F1BBC2D0A00D5A582 /* ScheduleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A9E1BBC2D0A00D5A582 /* ScheduleCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8453CB401BBD775900221659 /* UserWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8453CB3F1BBD775900221659 /* UserWorkout.swift */; settings = {ASSET_TAGS = (); }; };
 		84547A891BBA84EF00476EE8 /* HomeDisplayCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A881BBA84EF00476EE8 /* HomeDisplayCell.swift */; settings = {ASSET_TAGS = (); }; };
 		84547A8C1BBA872900476EE8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A8B1BBA872900476EE8 /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		84547A901BBA91C600476EE8 /* Movement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A8F1BBA91C600476EE8 /* Movement.swift */; settings = {ASSET_TAGS = (); }; };
@@ -27,6 +28,9 @@
 		84547AA01BBABD0B00476EE8 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547A9F1BBABD0B00476EE8 /* Bridge.swift */; settings = {ASSET_TAGS = (); }; };
 		84547AA21BBABD1D00476EE8 /* Handstand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547AA11BBABD1D00476EE8 /* Handstand.swift */; settings = {ASSET_TAGS = (); }; };
 		84547AA51BBAD8F000476EE8 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547AA41BBAD8F000476EE8 /* Training.swift */; settings = {ASSET_TAGS = (); }; };
+		84BF1D051BBE740300F1F2D6 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF1D041BBE740300F1F2D6 /* ExerciseCell.swift */; settings = {ASSET_TAGS = (); }; };
+		84BF1D081BBEC19700F1F2D6 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF1D071BBEC19700F1F2D6 /* TrainingView.swift */; settings = {ASSET_TAGS = (); }; };
+		84BF1D0A1BBEC1AD00F1F2D6 /* TrainingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BF1D091BBEC1AD00F1F2D6 /* TrainingView.xib */; settings = {ASSET_TAGS = (); }; };
 		84EE4C271BB97FE50098BC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4C261BB97FE50098BC01 /* AppDelegate.swift */; };
 		84EE4C291BB97FE50098BC01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4C281BB97FE50098BC01 /* ViewController.swift */; };
 		84EE4C2C1BB97FE50098BC01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EE4C2A1BB97FE50098BC01 /* Main.storyboard */; };
@@ -64,6 +68,7 @@
 		844E0A9A1BBBCBF800D5A582 /* ProgressionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ProgressionViewController.swift; path = Controllers/ProgressionViewController.swift; sourceTree = "<group>"; };
 		844E0A9C1BBBCC1300D5A582 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Controllers/SettingsViewController.swift; sourceTree = "<group>"; };
 		844E0A9E1BBC2D0A00D5A582 /* ScheduleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleCell.swift; path = Controllers/Cells/ScheduleCell.swift; sourceTree = "<group>"; };
+		8453CB3F1BBD775900221659 /* UserWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserWorkout.swift; path = Model/Classes/Business/UserWorkout.swift; sourceTree = "<group>"; };
 		84547A881BBA84EF00476EE8 /* HomeDisplayCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeDisplayCell.swift; path = Controllers/Cells/HomeDisplayCell.swift; sourceTree = "<group>"; };
 		84547A8B1BBA872900476EE8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Controllers/HomeViewController.swift; sourceTree = "<group>"; };
 		84547A8F1BBA91C600476EE8 /* Movement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Movement.swift; path = Model/Classes/Business/Movement.swift; sourceTree = "<group>"; };
@@ -76,6 +81,9 @@
 		84547A9F1BBABD0B00476EE8 /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bridge.swift; path = Model/Classes/Business/Bridge.swift; sourceTree = "<group>"; };
 		84547AA11BBABD1D00476EE8 /* Handstand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Handstand.swift; path = Model/Classes/Business/Handstand.swift; sourceTree = "<group>"; };
 		84547AA41BBAD8F000476EE8 /* Training.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Training.swift; path = Model/Classes/Business/Training.swift; sourceTree = "<group>"; };
+		84BF1D041BBE740300F1F2D6 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseCell.swift; path = Controllers/Cells/ExerciseCell.swift; sourceTree = "<group>"; };
+		84BF1D071BBEC19700F1F2D6 /* TrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrainingView.swift; path = Controllers/TrainingView/TrainingView.swift; sourceTree = "<group>"; };
+		84BF1D091BBEC1AD00F1F2D6 /* TrainingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrainingView.xib; path = Controllers/TrainingView/TrainingView.xib; sourceTree = "<group>"; };
 		84EE4C231BB97FE50098BC01 /* CCTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EE4C261BB97FE50098BC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EE4C281BB97FE50098BC01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -139,6 +147,7 @@
 			children = (
 				84547A881BBA84EF00476EE8 /* HomeDisplayCell.swift */,
 				844E0A9E1BBC2D0A00D5A582 /* ScheduleCell.swift */,
+				84BF1D041BBE740300F1F2D6 /* ExerciseCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -180,8 +189,18 @@
 			isa = PBXGroup;
 			children = (
 				84547AA41BBAD8F000476EE8 /* Training.swift */,
+				8453CB3F1BBD775900221659 /* UserWorkout.swift */,
 			);
 			name = Training;
+			sourceTree = "<group>";
+		};
+		84BF1D061BBEC16100F1F2D6 /* ExerciseView */ = {
+			isa = PBXGroup;
+			children = (
+				84BF1D071BBEC19700F1F2D6 /* TrainingView.swift */,
+				84BF1D091BBEC1AD00F1F2D6 /* TrainingView.xib */,
+			);
+			name = ExerciseView;
 			sourceTree = "<group>";
 		};
 		84EE4C1A1BB97FE50098BC01 = {
@@ -239,6 +258,7 @@
 		84EE4C571BB983D90098BC01 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				84BF1D061BBEC16100F1F2D6 /* ExerciseView */,
 				844E0A911BBBC24300D5A582 /* SlideMenu */,
 				84547A8A1BBA84F300476EE8 /* Cells */,
 				84EE4C281BB97FE50098BC01 /* ViewController.swift */,
@@ -399,6 +419,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84EE4C341BB97FE50098BC01 /* LaunchScreen.storyboard in Resources */,
+				84BF1D0A1BBEC1AD00F1F2D6 /* TrainingView.xib in Resources */,
 				84EE4C311BB97FE50098BC01 /* Assets.xcassets in Resources */,
 				84EE4C5E1BB986E20098BC01 /* Icons.xcassets in Resources */,
 				84EE4C2C1BB97FE50098BC01 /* Main.storyboard in Resources */,
@@ -429,9 +450,12 @@
 				84547A9A1BBABCDB00476EE8 /* Squat.swift in Sources */,
 				84547AA21BBABD1D00476EE8 /* Handstand.swift in Sources */,
 				84547A9E1BBABCFC00476EE8 /* LegRaise.swift in Sources */,
+				84BF1D051BBE740300F1F2D6 /* ExerciseCell.swift in Sources */,
 				844E0A901BBBB9C100D5A582 /* Rest.swift in Sources */,
 				84547A8C1BBA872900476EE8 /* HomeViewController.swift in Sources */,
 				844E0A9B1BBBCBF800D5A582 /* ProgressionViewController.swift in Sources */,
+				8453CB401BBD775900221659 /* UserWorkout.swift in Sources */,
+				84BF1D081BBEC19700F1F2D6 /* TrainingView.swift in Sources */,
 				844E0A931BBBC26F00D5A582 /* SlideMenuController.swift in Sources */,
 				844E0A9F1BBC2D0A00D5A582 /* ScheduleCell.swift in Sources */,
 				844E0A991BBBCBC800D5A582 /* ExerciseViewController.swift in Sources */,

@@ -8,11 +8,14 @@
 
 import Foundation
 
+let userWorkout = UserWorkout()
+
 
 struct Defaults {
-  static let schedule    = "kSchedule"
-  static let workoutName = "kWorkoutName"
-  static let appFont     = "Futura-CondensedExtraBold"
+  static let schedule      = "kSchedule"
+  static let workoutName   = "kWorkoutName"
+  static let appFont       = "Futura-CondensedExtraBold"
+  static let currentSteps  = "kCurrentSteps"
 }
 
 struct Icons {
@@ -81,6 +84,21 @@ struct Steps {
   static let stepNine  = 8
   static let stepTen   = 9
 }
+
+let stepNames = ["Step One", "Step Two", "Step THree", "Step Four", "Step Five", "Step Six", "Step Seven", "Step Eight", "Step Nine", "Step Ten"]
+
+//struct StepNames {
+//  static let stepOne   = "Step One"
+//  static let stepTwo   = "Step Two"
+//  static let stepThree = "Step Three"
+//  static let stepFour  = "Step Four"
+//  static let stepFive  = "Step Five"
+//  static let stepSix   = "Step Six"
+//  static let stepSeven = "Step Seven"
+//  static let stepEight = "Step Eight"
+//  static let stepNine  = "Step Nine"
+//  static let stepTen   = "Step Ten"
+//}
 
 struct Goals {
   var sets = 0

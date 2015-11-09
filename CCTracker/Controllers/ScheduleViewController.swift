@@ -9,13 +9,14 @@
 import Foundation
 import UIKit
 
-class ScheduleViewController : UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIPickerViewDelegate {
+class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UIPickerViewDelegate {
 
   let arrayWorkouts = [Workouts.NewBlood, Workouts.GoodBehavior, Workouts.Veterano, Workouts.Solitary, Workouts.Supermax]
   let training = Training()
   let reuseIdentifier = "Cell"
   private let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
-
+  private var scheduleCellSize:CGSize?
+  
   var currentWorkout  = [String:[Movement]]()
   var selectedWorkout = Set<Int>()
   var selectedProgram = -1
@@ -31,20 +32,33 @@ class ScheduleViewController : UIViewController, UICollectionViewDataSource, UIC
   override func viewDidLoad() {
     super.viewDidLoad()
     btnMenu .addTarget(self, action: "toggleLeft", forControlEvents: UIControlEvents.TouchUpInside)
+    
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    self.view.layoutIfNeeded()
+
+    self.navigationController?.navigationBarHidden = true
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     layout.sectionInset = sectionInsets
     layout.itemSize = CGSize(width: collectionVIew.frame.size.width/7, height: collectionVIew.frame.size.height/6)
     layout.minimumInteritemSpacing = 0
     layout.minimumLineSpacing = 0
-
+    
     collectionVIew.collectionViewLayout = layout
   }
   
-  override func viewWillAppear(animated: Bool) {
-    super.viewWillAppear(animated)
-    self.navigationController?.navigationBarHidden = true
+  override func viewDidAppear(animated: Bool) {
+    super.viewDidAppear(animated)
     loadTraining()
   }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    scheduleCellSize = CGSize(width: collectionVIew.frame.size.width/7, height: collectionVIew.frame.size.height/6)
+  }
+  
   
   //MARK: - Methods
   
@@ -167,7 +181,8 @@ class ScheduleViewController : UIViewController, UICollectionViewDataSource, UIC
   func collectionView(collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-      return CGSize(width: collectionVIew.frame.size.width/7, height: collectionVIew.frame.size.height/6)
+      print("collectionsizeforItem: \(CGSize(width: collectionVIew.frame.size.width, height: collectionVIew.frame.size.height))")
+      return scheduleCellSize!//CGSize(width: collectionVIew.frame.size.width/7, height: collectionVIew.frame.size.height/6)
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -208,15 +223,14 @@ class ScheduleViewController : UIViewController, UICollectionViewDataSource, UIC
   @IBAction func checkWorkout(sender: AnyObject) {
     btnCheckWorkout.selected = !btnCheckWorkout.selected
     
-    if selectedProgram != -1 {
-      clearWorkout(training.convictWorkout(workoutName: arrayWorkouts[selectedProgram]))
-    }
-    
     if btnCheckWorkout.selected {
-      showWorkout(training.convictWorkout(workoutName: arrayWorkouts[pickerWorkouts.selectedRowInComponent(0)]))
-      lblSelectedWorkout.hidden = false
-      lblSelectedWorkout.text = arrayWorkouts[pickerWorkouts.selectedRowInComponent(0)]
+      if selectedProgram != -1{
+        clearWorkout(training.convictWorkout(workoutName: arrayWorkouts[selectedProgram]))
+      }
       selectedProgram = pickerWorkouts.selectedRowInComponent(0)
+      showWorkout(training.convictWorkout(workoutName: arrayWorkouts[selectedProgram]))
+      lblSelectedWorkout.hidden = false
+      lblSelectedWorkout.text = arrayWorkouts[selectedProgram]
     }else {
       clearWorkout(training.convictWorkout(workoutName: arrayWorkouts[pickerWorkouts.selectedRowInComponent(0)]))
       lblSelectedWorkout.hidden = true

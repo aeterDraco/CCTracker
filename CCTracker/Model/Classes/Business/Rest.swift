@@ -11,7 +11,7 @@ import Foundation
 class Rest: Movement {
 
   init() {
-    super.init(movementName: Movements.Rest, movementIcon: Icons.whiteRest)
+    super.init(movementName: Movements.Rest, movementIcon: Icons.whiteRest, currentStep: -1)
   }
 
 }
