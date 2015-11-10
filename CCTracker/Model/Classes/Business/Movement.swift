@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class Movement{
+class Movement : NSObject{
   
   var name: String
   var exercises = [Exercise]()

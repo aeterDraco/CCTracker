@@ -25,11 +25,13 @@ class Training {
   //This function returns all the workouth schedule
   func getWorkoutSchedule() ->[String:[Movement]] {
     let defaults = NSUserDefaults.standardUserDefaults()
+    
     if let scheduleData = defaults.dictionaryForKey(Defaults.schedule) as? [String:[String]]{
       let schedule:[String:[Movement]] = createTrainingFromDictionary(scheduleData)
       return schedule
     }else{
-      return [String:[Movement]]()
+        
+        return [String:[Movement]]()
     }
   }
 
@@ -54,10 +56,13 @@ class Training {
     return list
   }
 
-  
   //This function reads the stored workout program and returns an array whit the movemnts for the day
   func readTodaysTraining() ->[Movement] {
-    return workout[getTodayKey()]!
+    if workout.count == 0 {
+        return [Movement]()
+    } else {
+        return workout[getTodayKey()]!
+    }
   }
   
   //Saving a workout

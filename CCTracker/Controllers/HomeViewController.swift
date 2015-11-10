@@ -11,7 +11,7 @@ import Foundation
 
 class HomeViewController: UIViewController  {
   
-  let training = Training()
+  var training = Training()
   let reuseCellIdentifier = "HomeDisplayCell"
   var todaysTraining = [Movement] ()
   weak var delegate: LeftMenuProtocol?
@@ -42,10 +42,13 @@ class HomeViewController: UIViewController  {
   //MARK: Methods
   
   func loadTraining(){
+    training = Training()
     todaysTraining = training.readTodaysTraining()
     if todaysTraining.count > 0 {
       btnStartTraining.hidden  = false
       btnSelectTraining.hidden = true
+      lblNoTraining.hidden     = true
+      tableTraining.hidden     = false
 
       tableTraining.reloadData()
     }else{

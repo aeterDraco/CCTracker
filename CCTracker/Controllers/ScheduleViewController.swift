@@ -25,7 +25,7 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
   @IBOutlet weak var btnCheckWorkout: UIButton!
   @IBOutlet weak var btnMenu: UIButton!
   @IBOutlet weak var pickerWorkouts: UIPickerView!
-  @IBOutlet weak var collectionVIew: UICollectionView!
+  @IBOutlet weak var collectionView: UICollectionView!
   @IBOutlet weak var lblSelectedWorkout: UILabel!
 
   
@@ -42,11 +42,11 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
     self.navigationController?.navigationBarHidden = true
     let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
     layout.sectionInset = sectionInsets
-    layout.itemSize = CGSize(width: collectionVIew.frame.size.width/7, height: collectionVIew.frame.size.height/6)
+    layout.itemSize = CGSize(width: collectionView.frame.size.width/7, height: collectionView.frame.size.height/6)
     layout.minimumInteritemSpacing = 0
     layout.minimumLineSpacing = 0
     
-    collectionVIew.collectionViewLayout = layout
+    collectionView.collectionViewLayout = layout
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -56,7 +56,8 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
   
   override func viewDidLayoutSubviews() {
     super.viewDidLayoutSubviews()
-    scheduleCellSize = CGSize(width: collectionVIew.frame.size.width/7, height: collectionVIew.frame.size.height/6)
+    scheduleCellSize = CGSize(width: collectionView.frame.size.width/7, height: collectionView.frame.size.height/6)
+    collectionView.reloadData()
   }
   
   
@@ -67,6 +68,8 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
     if currentWorkout.count > 0 {
       setPreMadeWorkoutName()
       showWorkout(currentWorkout)
+    } else {
+        lblSelectedWorkout.text = ""
     }
   }
   
@@ -94,7 +97,7 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
       }
     }
     print("\(selectedWorkout)")
-    collectionVIew.reloadData()
+    collectionView.reloadData()
   }
 
   func clearWorkout(workout:[String:[Movement]]) {
@@ -107,7 +110,7 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
         }
       }
     }
-    collectionVIew.reloadData()
+    collectionView.reloadData()
   }
 
   func indexForDay(selectedDay:String) ->Int {
@@ -181,8 +184,8 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
   func collectionView(collectionView: UICollectionView,
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-      print("collectionsizeforItem: \(CGSize(width: collectionVIew.frame.size.width, height: collectionVIew.frame.size.height))")
-      return scheduleCellSize!//CGSize(width: collectionVIew.frame.size.width/7, height: collectionVIew.frame.size.height/6)
+      print("collectionsizeforItem: \(CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height))")
+      return scheduleCellSize!//CGSize(width: collectionView.frame.size.width/7, height: collectionView.frame.size.height/6)
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
@@ -217,7 +220,7 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
     btnCheckWorkout.selected = false
     lblSelectedWorkout.hidden = true
     selectedWorkout = Set<Int>()
-    collectionVIew.reloadData()
+    collectionView.reloadData()
   }
 
   @IBAction func checkWorkout(sender: AnyObject) {

@@ -11,6 +11,12 @@ import UIKit
 @IBDesignable class TrainingView: UIView {
 
   @IBOutlet var view: UIView!
+    @IBOutlet weak var lblTitle: UILabel!
+    
+    @IBOutlet weak var thisSwitch: UISwitch!
+  @IBAction func switchTapped(sender: UISwitch) {
+    print("switch from cell \(sender.tag) changed to turned \(sender.on)")
+  }
   
   required init?(coder aDecoder: NSCoder) {
     super.init(coder: aDecoder)
