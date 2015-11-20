@@ -3,8 +3,11 @@
 // Copyright (c) 2015 VIPER. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+import Foundation
 
-@interface HomeItem : NSObject
-
-@end
+struct HomeItem
+{
+    /**
+    *  Attributes here
+    */
+}

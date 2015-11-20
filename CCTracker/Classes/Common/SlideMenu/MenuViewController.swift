@@ -40,7 +40,7 @@ class MenuViewController : UIViewController, LeftMenuProtocol {
 
     
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
-    let homeViewController = storyboard.instantiateViewControllerWithIdentifier (ViewId.Home) as! HomeViewController
+    let homeViewController = storyboard.instantiateViewControllerWithIdentifier (ViewId.Home) as! HomeView
     homeViewController.delegate = self
     self.homeViewController = UINavigationController(rootViewController: homeViewController)
     self.homeViewController.navigationController?.navigationBarHidden = true

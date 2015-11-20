@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // create viewController code...
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     
-    let mainViewController = storyboard.instantiateViewControllerWithIdentifier(ViewId.Home) as! HomeViewController
+    let mainViewController = storyboard.instantiateViewControllerWithIdentifier(ViewId.Home) as! HomeView
     let leftViewController = storyboard.instantiateViewControllerWithIdentifier(ViewId.Menu) as! MenuViewController
     
     let nvc: UINavigationController = UINavigationController(rootViewController: mainViewController)
