@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4504E1AB1BFF34F80018A0C7 /* Handstand.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4504E1AA1BFF34F80018A0C7 /* Handstand.xcassets */; };
+		4504E1AD1BFF35120018A0C7 /* LegRaise.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4504E1AC1BFF35120018A0C7 /* LegRaise.xcassets */; };
+		4504E1AF1BFF35280018A0C7 /* Pullup.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4504E1AE1BFF35280018A0C7 /* Pullup.xcassets */; };
+		4504E1B11BFF35410018A0C7 /* Pushup.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4504E1B01BFF35410018A0C7 /* Pushup.xcassets */; };
+		4504E1B31BFF35530018A0C7 /* Squat.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4504E1B21BFF35530018A0C7 /* Squat.xcassets */; };
 		454E7C081BF9F849005F0EBC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E7C071BF9F849005F0EBC /* MenuViewController.swift */; };
 		4555337C1BFF26870036E3EB /* Home in Resources */ = {isa = PBXBuildFile; fileRef = 4555337B1BFF26870036E3EB /* Home */; };
+		4555337E1BFF34720036E3EB /* Bridge.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4555337D1BFF34720036E3EB /* Bridge.xcassets */; };
 		844E0A901BBBB9C100D5A582 /* Rest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A8F1BBBB9C100D5A582 /* Rest.swift */; };
 		844E0A931BBBC26F00D5A582 /* SlideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A921BBBC26F00D5A582 /* SlideMenuController.swift */; };
 		844E0A971BBBCBB700D5A582 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 844E0A961BBBCBB700D5A582 /* ScheduleViewController.swift */; };
@@ -60,8 +66,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4504E1AA1BFF34F80018A0C7 /* Handstand.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Handstand.xcassets; sourceTree = "<group>"; };
+		4504E1AC1BFF35120018A0C7 /* LegRaise.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = LegRaise.xcassets; sourceTree = "<group>"; };
+		4504E1AE1BFF35280018A0C7 /* Pullup.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Pullup.xcassets; sourceTree = "<group>"; };
+		4504E1B01BFF35410018A0C7 /* Pushup.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Pushup.xcassets; sourceTree = "<group>"; };
+		4504E1B21BFF35530018A0C7 /* Squat.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Squat.xcassets; sourceTree = "<group>"; };
 		454E7C071BF9F849005F0EBC /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Classes/Common/SlideMenu/MenuViewController.swift; sourceTree = "<group>"; };
 		4555337B1BFF26870036E3EB /* Home */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Home; path = Classes/Modules/Home; sourceTree = "<group>"; };
+		4555337D1BFF34720036E3EB /* Bridge.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bridge.xcassets; sourceTree = "<group>"; };
 		844E0A8F1BBBB9C100D5A582 /* Rest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Rest.swift; path = Classes/Common/Model/Movements/Rest.swift; sourceTree = "<group>"; };
 		844E0A921BBBC26F00D5A582 /* SlideMenuController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideMenuController.swift; path = Classes/Common/SlideMenu/SlideMenuController.swift; sourceTree = "<group>"; };
 		844E0A961BBBCBB700D5A582 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScheduleViewController.swift; path = Controllers/ScheduleViewController.swift; sourceTree = "<group>"; };
@@ -311,6 +323,12 @@
 			children = (
 				84EE4C301BB97FE50098BC01 /* Assets.xcassets */,
 				84EE4C5D1BB986E20098BC01 /* Icons.xcassets */,
+				4555337D1BFF34720036E3EB /* Bridge.xcassets */,
+				4504E1AA1BFF34F80018A0C7 /* Handstand.xcassets */,
+				4504E1AC1BFF35120018A0C7 /* LegRaise.xcassets */,
+				4504E1AE1BFF35280018A0C7 /* Pullup.xcassets */,
+				4504E1B01BFF35410018A0C7 /* Pushup.xcassets */,
+				4504E1B21BFF35530018A0C7 /* Squat.xcassets */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -419,12 +437,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4504E1B11BFF35410018A0C7 /* Pushup.xcassets in Resources */,
 				84EE4C341BB97FE50098BC01 /* LaunchScreen.storyboard in Resources */,
 				84BF1D0A1BBEC1AD00F1F2D6 /* TrainingView.xib in Resources */,
 				84EE4C311BB97FE50098BC01 /* Assets.xcassets in Resources */,
+				4504E1B31BFF35530018A0C7 /* Squat.xcassets in Resources */,
+				4504E1AF1BFF35280018A0C7 /* Pullup.xcassets in Resources */,
+				4504E1AB1BFF34F80018A0C7 /* Handstand.xcassets in Resources */,
 				84EE4C5E1BB986E20098BC01 /* Icons.xcassets in Resources */,
+				4504E1AD1BFF35120018A0C7 /* LegRaise.xcassets in Resources */,
 				84EE4C2C1BB97FE50098BC01 /* Main.storyboard in Resources */,
 				4555337C1BFF26870036E3EB /* Home in Resources */,
+				4555337E1BFF34720036E3EB /* Bridge.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
