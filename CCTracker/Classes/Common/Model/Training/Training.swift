@@ -8,40 +8,35 @@
 
 import Foundation
 
-class Training {
+class Training: TrainingDataManagerProtocol {
   
-  var workout = [String:[Movement]]()
-  var workoutName = String()
+  var isCCWorkout: Bool
+  var schedule = [Days:[Movement]]()
+  var name = String()
  
   init(){
-    workout = getWorkoutSchedule()
-    workoutName = getWorkoutName()
+    schedule    = [Days:[Movement]]()
+    name        = String()
+    isCCWorkout = false
   }
 
-  func currentStepForMovement(movementName:String) ->Int {
-    return userWorkout.getCurrentStepforMovement(movementName)
+  init(trainingInfo: [String:[String]], trainingName: String, isCCWorkout: Bool) {
+    self.schedule = [Days:[Movement]]()
+    self.isCCWorkout = isCCWorkout
+
+    for key in trainingInfo.keys {
+      var movements = [Movement]()
+      for movementName in trainingInfo[key]! {
+        movements.append(createMovementFromName(movementName))
+      }
+      let dayKey = DateManager.obtainDayName(weekDayInt: Int(key)!)
+      self.schedule[dayKey] = movements
+    }
+    self.name = trainingName
   }
   
-  //This function returns all the workouth schedule
-  func getWorkoutSchedule() ->[String:[Movement]] {
-    let defaults = NSUserDefaults.standardUserDefaults()
-    
-    if let scheduleData = defaults.dictionaryForKey(Defaults.schedule) as? [String:[String]]{
-      let schedule:[String:[Movement]] = createTrainingFromDictionary(scheduleData)
-      return schedule
-    }else{
-        
-        return [String:[Movement]]()
-    }
-  }
-
-  func getWorkoutName() ->String {
-    let defaults = NSUserDefaults.standardUserDefaults()
-    if let name = defaults.stringForKey(Defaults.workoutName){
-      return name
-    }else{
-      return String()
-    }
+  func currentStepForMovement(movementName:String) ->Int {
+    return userWorkout.getCurrentStepforMovement(movementName)
   }
   
   func workoutList() -> [Movement] {
@@ -57,25 +52,28 @@ class Training {
   }
 
   //This function reads the stored workout program and returns an array whit the movemnts for the day
-  func readTodaysTraining() ->[Movement] {
-    if workout.count == 0 {
-        return [Movement]()
-    } else {
-        return workout[getTodayKey()]!
+  
+  func generateTrainingInfo() -> [String : [String]] {
+    var dictionary = [String:[String]]()
+    for dayKey in schedule.keys {
+      var movementNames = [String]()
+      for movement in schedule[dayKey]! {
+        movementNames.append(movement.name)
+      }
+      dictionary[String("\(dayKey)")] = movementNames
     }
+    return dictionary
   }
   
-  //Saving a workout
-  func saveWorkout(workout:[String:[Movement]], workoutName:String) -> Bool {
-    self.workout = workout
-    let workoutToSave = createDictionaryFromTraining(workout)
-    let defaults = NSUserDefaults.standardUserDefaults()
-    defaults.setObject(workoutToSave, forKey: Defaults.schedule)
-    defaults.setObject(workoutName, forKey: Defaults.workoutName)
-    return defaults.synchronize()
+  func getTrainingName() -> String {
+    return self.name
   }
   
-  func createWorkoutWithSet(exercises:Set<Int>) ->[String:[Movement]] {
+  func getCCWorkoutStatus() -> Bool {
+    return self.isCCWorkout
+  }
+  
+  func createWorkoutWithSet(exercises:Set<Int>) ->[Days:[Movement]] {
     var workout = setMovementsInWorkout(exercises)
     for key in workout.keys {
       if workout[key]?.count == 0 {
@@ -85,32 +83,19 @@ class Training {
 
     return workout
   }
-  
-  func createDictionaryFromTraining(training:[String:[Movement]]) ->[String:[String]] {
-    var dictionary = [String:[String]]()
-    
-    for key in training.keys {
-      var movementNames = [String]()
-      for movement in training[key]! {
-        movementNames.append(movement.name)
-      }
-      dictionary[key] = movementNames
-    }
-    return dictionary
-  }
 
-  func createTrainingFromDictionary(dictionary:[String:[String]]) ->[String:[Movement]] {
-    var training = [String:[Movement]]()
-    
-    for key in dictionary.keys {
-      var movements = [Movement]()
-      for movementName in dictionary[key]! {
-        movements.append(createMovementFromName(movementName))
-      }
-      training[key] = movements
-    }
-    return training
-  }
+//  static func createTrainingFromDictionary(dictionary:[String:[String]]) ->[String:[Movement]] {
+//    var training = [String:[Movement]]()
+//    
+//    for key in dictionary.keys {
+//      var movements = [Movement]()
+//      for movementName in dictionary[key]! {
+//        movements.append(createMovementFromName(movementName))
+//      }
+//      training[key] = movements
+//    }
+//    return training
+//  }
 
   func createMovementFromName(movementName:String) ->Movement {
     if movementName == Movements.Pushup {
@@ -130,8 +115,8 @@ class Training {
     }
   }
   
-  private func setMovementsInWorkout(trainingSet:Set<Int>) -> [String:[Movement]] {
-    var workout = [String:[Movement]]()
+  private func setMovementsInWorkout(trainingSet:Set<Int>) -> [Days:[Movement]] {
+    var workout = [Days:[Movement]]()
     var mon  = [Movement]()
     var tue  = [Movement]()
     var wed  = [Movement]()
@@ -188,115 +173,4 @@ class Training {
     }
   }
 
-  func getTodayKey() -> String {
-    let today = NSDate()
-    let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-    let components = calendar.components(NSCalendarUnit.Weekday, fromDate: today)
-    
-    switch components.weekday {
-    case 1:
-      return Days.Sunday
-    case 2:
-      return Days.Monday
-    case 3:
-      return Days.Tuesday
-    case 4:
-      return Days.Wednesday
-    case 5:
-      return Days.Thursday;
-    case 6:
-      return Days.Friday
-    case 7:
-      return Days.Saturday
-    default:
-      return ""
-    }
-  }
-
-  func convictWorkout(workoutName name:String) -> [String:[Movement]] {
-    if name == Workouts.NewBlood {
-      return newBloodWorkout()
-    }else if name == Workouts.GoodBehavior {
-      return goodBehaviorWorkout()
-    }else if name == Workouts.Veterano {
-      return veteranoWorkout()
-    }else if name == Workouts.Solitary {
-      return solitaryConfinementWorkout()
-    }else if name == Workouts.Supermax {
-      return supermaxWorkout()
-    }else{
-      return [String:[Movement]]()
-    }
-  }
-  
-  func newBloodWorkout() ->[String:[Movement]] {
-    var workout = [String:[Movement]]()
-    
-    workout[Days.Monday]    = [Pushup(), LegRaise()]
-    workout[Days.Tuesday]   = [Rest()]
-    workout[Days.Wednesday] = [Rest()]
-    workout[Days.Thursday]  = [Rest()]
-    workout[Days.Friday]    = [Pullup(), Squat()]
-    workout[Days.Saturday]  = [Rest()]
-    workout[Days.Sunday]    = [Rest()]
-
-    return workout
-  }
-
-  func goodBehaviorWorkout() ->[String:[Movement]] {
-    var workout = [String:[Movement]]()
-
-    workout[Days.Monday]    = [Pushup(), LegRaise()]
-    workout[Days.Tuesday]   = [Rest()]
-    workout[Days.Wednesday] = [Pullup(), Squat()]
-    workout[Days.Thursday]  = [Rest()]
-    workout[Days.Friday]    = [Handstand(), Bridge()]
-    workout[Days.Saturday]  = [Rest()]
-    workout[Days.Sunday]    = [Rest()]
-    
-    return workout
-  }
-
-  func veteranoWorkout() ->[String:[Movement]] {
-    var workout = [String:[Movement]]()
-    
-    workout[Days.Monday]    = [Pullup()]
-    workout[Days.Tuesday]   = [Bridge()]
-    workout[Days.Wednesday] = [Handstand()]
-    workout[Days.Thursday]  = [LegRaise()]
-    workout[Days.Friday]    = [Squat()]
-    workout[Days.Saturday]  = [Pushup()]
-    workout[Days.Sunday]    = [Rest()]
-
-    return workout
-  }
-
-  func solitaryConfinementWorkout() ->[String:[Movement]] {
-    var workout = [String:[Movement]]()
-    
-    workout[Days.Monday]    = [Pullup(), Squat()]
-    workout[Days.Tuesday]   = [Pushup(), LegRaise()]
-    workout[Days.Wednesday] = [Handstand(), Bridge()]
-    workout[Days.Thursday]  = [Pullup(), Squat()]
-    workout[Days.Friday]    = [Pushup(), LegRaise()]
-    workout[Days.Saturday]  = [Handstand(), Bridge()]
-    workout[Days.Sunday]    = [Rest()]
-
-    return workout
-  }
-
-  func supermaxWorkout() ->[String:[Movement]] {
-    var workout = [String:[Movement]]()
-    
-    workout[Days.Monday]    = [Pullup(), Squat()]
-    workout[Days.Tuesday]   = [Pushup(), LegRaise()]
-    workout[Days.Wednesday] = [Handstand(), Bridge()]
-    workout[Days.Thursday]  = [Pullup(), Squat()]
-    workout[Days.Friday]    = [Pushup(), LegRaise()]
-    workout[Days.Saturday]  = [Handstand(), Bridge()]
-    workout[Days.Sunday]    = [Rest()]
-
-    return workout
-  }
-  
 }

@@ -402,10 +402,10 @@
             </objects>
             <point key="canvasLocation" x="-200" y="-750"/>
         </scene>
-        <!--Schedule View Controller-->
+        <!--Schedule View-->
         <scene sceneID="IlI-WU-0jw">
             <objects>
-                <viewController storyboardIdentifier="ScheduleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jlB-y4-adC" customClass="ScheduleViewController" customModule="CCTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ScheduleViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jlB-y4-adC" customClass="ScheduleView" customModule="CCTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vSS-LY-B70"/>
                         <viewControllerLayoutGuide type="bottom" id="Ujx-ir-4H2"/>
@@ -1126,10 +1126,10 @@
             </objects>
             <point key="canvasLocation" x="61" y="74"/>
         </scene>
-        <!--Menu View Controller-->
+        <!--Menu Module View-->
         <scene sceneID="lQe-f7-0YV">
             <objects>
-                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="czu-y3-gH8" customClass="MenuViewController" customModule="CCTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MenuViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="czu-y3-gH8" customClass="MenuModuleView" customModule="CCTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bBk-QI-NT1"/>
                         <viewControllerLayoutGuide type="bottom" id="OGk-aM-De5"/>
@@ -1215,7 +1215,7 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="tableView" destination="1X6-pc-Sdh" id="otK-iS-7S5"/>
+                        <outlet property="tableView" destination="1X6-pc-Sdh" id="e7O-JM-Mj8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4v8-B2-1Os" userLabel="First Responder" sceneMemberID="firstResponder"/>

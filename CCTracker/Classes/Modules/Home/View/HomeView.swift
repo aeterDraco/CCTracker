@@ -8,56 +8,41 @@ import UIKit
 
 class HomeView: UIViewController, HomeViewProtocol
 {
-  
   var presenter: HomePresenterProtocol?
-  var training = Training()
   let reuseCellIdentifier = "HomeDisplayCell"
   var todaysTraining = [Movement] ()
+
   weak var delegate: LeftMenuProtocol?
-  
   
   @IBOutlet weak var lblNoTraining: UILabel!
   @IBOutlet weak var tableTraining: UITableView!
   @IBOutlet weak var btnStartTraining: UIButton!
   @IBOutlet weak var btnSelectTraining: UIButton!
   @IBOutlet weak var btnMenu: UIButton!
+
+  static func instantiate() -> UIViewController{
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    let homeViewController = storyboard.instantiateViewControllerWithIdentifier("HomeViewController")// as! HomeView
+    return homeViewController
+  }
   
   override func viewDidLoad() {
     super.viewDidLoad()
     btnMenu.addTarget(self, action: "toggleLeft", forControlEvents: UIControlEvents.TouchUpInside)
-    tableTraining.tableFooterView = UIView()
+//    tableTraining.tableFooterView = UIView()
   }
   
   override func viewWillAppear(animated: Bool) {
     super.viewWillAppear(animated)
     self.navigationController?.navigationBarHidden = true
-    loadTraining()
+    
+    self.presenter?.updateView()
   }
   
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }
-  
-  //MARK: Methods
-  
-  func loadTraining(){
-    training = Training()
-    todaysTraining = training.readTodaysTraining()
-    if todaysTraining.count > 0 {
-      btnStartTraining.hidden  = false
-      btnSelectTraining.hidden = true
-      lblNoTraining.hidden     = true
-      tableTraining.hidden     = false
-      
-      tableTraining.reloadData()
-    }else{
-      lblNoTraining.hidden     = false
-      tableTraining.hidden     = true
-      btnStartTraining.hidden  = true
-      btnSelectTraining.hidden = false
-    }
-  }
-  
+
   //MARK: - Table View Data Source Delegate
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return todaysTraining.count
@@ -65,31 +50,50 @@ class HomeView: UIViewController, HomeViewProtocol
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCellWithIdentifier(reuseCellIdentifier, forIndexPath: indexPath) as! HomeDisplayCell
-    cell.backgroundColor = UIColor.clearColor()
     let currentMovement = todaysTraining[indexPath.row]
     
-    cell.imgExercise?.image = currentMovement.iconMovement
+    return configureCell(cellToConfigure: cell, withMovement: currentMovement)
+  }
+  
+  func configureCell(cellToConfigure cell:HomeDisplayCell, withMovement movement:Movement) -> HomeDisplayCell{
+    cell.backgroundColor = UIColor.clearColor()
+    cell.imgExercise?.image = movement.iconMovement
     cell.lblExerciseName?.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.67)
     cell.lblExerciseName?.font = UIFont(name: Defaults.appFont, size: 15)
     
-    if currentMovement.name == Movements.Rest {
-      cell.lblExerciseName?.text = String(format: "%@", currentMovement.name)
+    if movement.name == Movements.Rest {
+      cell.lblExerciseName?.text = String(format: "%@", movement.name)
     }else {
-      let stepInfo = currentMovement.getStepInfo()
+      let stepInfo = movement.getStepInfo()
       cell.lblExerciseName?.text = String(format: "%@: %@", stepInfo[0],stepInfo[1])
     }
-    
-    print("\(cell.lblExerciseName?.text)")
     return cell
   }
   
   //MARK: - IBActions Methods
   @IBAction func selectTraining(sender: AnyObject) {
-    delegate?.changeViewController(LeftMenu.Schedule)
+    self.presenter!.navigateToView(LeftMenu.Schedule)
+//    delegate?.changeViewController(LeftMenu.Schedule)
   }
   
-  @IBAction func StartTraining(sender: AnyObject) {
-    delegate?.changeViewController(LeftMenu.Exercise)
+  @IBAction func startTraining(sender: AnyObject) {
+//    delegate?.changeViewController(LeftMenu.Exercise)
+  }
+  
+
+  //MARK: - HomeViewProtocol Methods
+  
+  func displayTrainingInfo(todaysTraining: [Movement]) {
+    self.todaysTraining = todaysTraining
+    self.tableTraining.reloadData()
+  }
+  
+  func noWorkoutSelected() {
+    self.tableTraining.hidden     = true
+    self.lblNoTraining.hidden     = false
+    self.btnStartTraining.hidden  = true
+    self.btnSelectTraining.hidden = false
   }
 
+  
 }

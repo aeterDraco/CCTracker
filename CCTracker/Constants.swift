@@ -10,12 +10,31 @@ import Foundation
 
 let userWorkout = UserWorkout()
 
+typealias CompletionHandlerType = (Result) -> Void
+
+enum Result {
+  case Success(AnyObject?)
+  case Failure(Error)
+}
+
+enum Error: ErrorType {
+  case LocalDataManagerFailure
+}
+
+protocol ViewProtocol: class {
+}
+
+protocol MenuProtocol: class {
+  weak var delegate: LeftMenuProtocol? { get set }
+}
+
 
 struct Defaults {
   static let schedule      = "kSchedule"
   static let workoutName   = "kWorkoutName"
   static let appFont       = "Futura-CondensedExtraBold"
   static let currentSteps  = "kCurrentSteps"
+  static let isCCWorkout   = "kIsCCWorkout"
 }
 
 struct Icons {
@@ -43,6 +62,24 @@ struct ViewId {
   static let Progression = "ProgressionViewController"
   static let Settings    = "SettingsViewController"
   static let Menu        = "MenuViewController"
+  
+  static func fetchValue(intValue: Int) -> String {
+    switch (intValue) {
+      case 0:
+        return ViewId.Home
+      case 1:
+        return ViewId.Schedule
+      case 2:
+        return ViewId.Exercise
+      case 3:
+        return ViewId.Progression
+      case 4:
+        return ViewId.Settings
+      default:
+        break
+    }
+    return String()
+  }
 }
 
 struct TrainingStandards {
@@ -50,16 +87,6 @@ struct TrainingStandards {
   static let intermediate = "Intermediate"
   static let progression  = "Progression"
   static let elite        = "Elite"
-}
-
-struct Days {
-  static let Monday    = "Monday"
-  static let Tuesday   = "Tuesday"
-  static let Wednesday = "Wednesday"
-  static let Thursday  = "Thursday"
-  static let Friday    = "Friday"
-  static let Saturday  = "Saturday"
-  static let Sunday    = "Sunday"
 }
 
 struct Movements {
