@@ -10,7 +10,6 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
 
   var presenter: SchedulePresenterProtocol?
   
-  let training = Training()
   let reuseIdentifier = "Cell"
   private let sectionInsets = UIEdgeInsets(top: 0.0, left: 0.0, bottom: 0.0, right: 0.0)
   private var scheduleCellSize:CGSize?
@@ -18,7 +17,8 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
   var currentWorkout  = [Days:[Movement]]()
   var selectedWorkout = Set<Int>()
   var selectedProgram = -1
-  var arrayWorkouts   =  [String]()
+  var arrayWorkouts   = [String]()
+  var isCCWorkout     = false
   
   weak var delegate: LeftMenuProtocol?
   
@@ -81,10 +81,35 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
       pickerWorkouts.selectRow(selectedProgram, inComponent: 0, animated: true)
       btnCheckWorkout.selected = true
     }
+    self.isCCWorkout = isCCWorkout
+  }
+  
+  func displayFailureSavingWorkout(){
+    displaySavingWorkoutActionSheet("", message: "Traning schedule could not be saved!")
+  }
+  
+  func displaySuccessSavingWorkout(){
+    displaySavingWorkoutActionSheet("", message: "Traning schedule saved!")
+  }
+  
+  //MARK: - ActionSheet Methods
+  
+  func displaySavingWorkoutActionSheet(title: String, message: String) {
+    let actionSheetController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+    
+    let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .Cancel) { action -> Void in
+    }
+    actionSheetController.addAction(cancelAction)
+
+    self.presentViewController(actionSheetController, animated: true, completion: nil)
   }
 
+
+  //MARK: - IBAction Methods
+  
   @IBAction func checkWorkout(sender: AnyObject) {
-    print("checkWoekout")
+    let selectedWorkoutName = self.arrayWorkouts[self.pickerWorkouts.selectedRowInComponent(0)]
+    self.presenter!.fetchCCWorkoutWithName(selectedWorkoutName)
   }
   
   @IBAction func selectDay(sender: UIButton) {
@@ -101,6 +126,7 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
   }
   
   @IBAction func selectTraining(sender: AnyObject) {
+    self.presenter!.saveWorkout(selectedWorkout, workoutName: lblSelectedWorkout.text!, isCCWorkout: isCCWorkout)
   }
 
   

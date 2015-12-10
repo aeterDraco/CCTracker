@@ -25,11 +25,16 @@ class SchedulePresenter: SchedulePresenterProtocol, ScheduleInteractorOutputProt
     }
   }
   
-//  func fetchConvictConditioningWorkoutNames() {
-//    self.interactor?.fetchConvictConditioningWorkoutNames()
-//  }
+  func fetchCCWorkoutWithName(workoutName: String) {
+      self.interactor!.fetchCCWorkoutWithName(workoutName)
+  }
+  
+  func saveWorkout(workoutSchedule: Set<Int>, workoutName: String, isCCWorkout: Bool) {
+    self.interactor!.saveWorkout(workoutSchedule, workoutName: workoutName, isCCWorkout: isCCWorkout)
+  }
 
-  //MARK: - ScheduleViewProtocol
+
+  //MARK: - ScheduleInteractorOutputProtocol
   func convictConditioningWorkoutNames(workoutNames: [String]) {
     self.view!.updateCCWorkoutsPicker(workoutNames)
   }
@@ -38,6 +43,14 @@ class SchedulePresenter: SchedulePresenterProtocol, ScheduleInteractorOutputProt
     self.view!.updateScheduleView(currentWorkout.schedule)
     self.view!.updateWorkoutName(currentWorkout.name)
     self.view!.updateCCWorkoutSelected(currentWorkout.isCCWorkout)
+  }
+  
+  func workoutSaveSuccesfull() {
+    self.view!.displaySuccessSavingWorkout()
+  }
+  
+  func workoutSaveFailed() {
+    self.view!.displayFailureSavingWorkout()
   }
 
 }

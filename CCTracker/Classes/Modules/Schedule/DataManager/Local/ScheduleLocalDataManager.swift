@@ -38,4 +38,28 @@ class ScheduleLocalDataManager: ScheduleLocalDataManagerInputProtocol
     }
   }
   
+  func fetchCCWorkoutWithName(workoutName: String, completionHandler: CompletionHandlerType) {
+    dataManager.fetchCCworkoutWithName(workoutName){ (result) -> Void in
+      switch (result) {
+        case .Success(let selectedTraining as Training):
+          completionHandler(Result.Success(selectedTraining))
+        case .Failure(let error):
+          completionHandler(Result.Failure(error))
+        default:
+          break
+      }
+    }
+  }
+  
+  func saveWorkout(trainingToSave: Training, completionHandler: CompletionHandlerType) {
+    dataManager.saveTraining(trainingToSave) { (result) -> Void in
+      switch (result) {
+      case .Success(_):
+        completionHandler(Result.Success(true))
+      case .Failure(_):
+        completionHandler(Result.Failure(.LocalDataManagerFailure))
+      }
+    }
+  }
+
 }

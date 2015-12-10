@@ -31,7 +31,7 @@ class Workout: WorkoutDataManagerProtocol {
     }
   }
   
-  static func newBloodWorkout() ->[Days:[Movement]] {
+  private static func newBloodWorkout() ->[Days:[Movement]] {
     var workout = [Days:[Movement]]()
     
     workout[Days.Monday]    = [Pushup(), LegRaise()]
@@ -45,7 +45,7 @@ class Workout: WorkoutDataManagerProtocol {
     return workout
   }
   
-  static func goodBehaviorWorkout() ->[Days:[Movement]] {
+  private static func goodBehaviorWorkout() ->[Days:[Movement]] {
     var workout = [Days:[Movement]]()
     
     workout[Days.Monday]    = [Pushup(), LegRaise()]
@@ -59,7 +59,7 @@ class Workout: WorkoutDataManagerProtocol {
     return workout
   }
   
-  static func veteranoWorkout() ->[Days:[Movement]] {
+  private static func veteranoWorkout() ->[Days:[Movement]] {
     var workout = [Days:[Movement]]()
     
     workout[Days.Monday]    = [Pullup()]
@@ -73,7 +73,7 @@ class Workout: WorkoutDataManagerProtocol {
     return workout
   }
   
-  static func solitaryConfinementWorkout() ->[Days:[Movement]] {
+  private static func solitaryConfinementWorkout() ->[Days:[Movement]] {
     var workout = [Days:[Movement]]()
     
     workout[Days.Monday]    = [Pullup(), Squat()]
@@ -87,7 +87,7 @@ class Workout: WorkoutDataManagerProtocol {
     return workout
   }
   
-  static func supermaxWorkout() ->[Days:[Movement]] {
+  private static func supermaxWorkout() ->[Days:[Movement]] {
     var workout = [Days:[Movement]]()
     
     workout[Days.Monday]    = [Pullup(), Squat()]

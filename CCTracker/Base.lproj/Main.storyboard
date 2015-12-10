@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="sfy-la-rGL">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -8,6 +8,54 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
+        <!--Menu Container View Controller-->
+        <scene sceneID="pxA-CC-0dc">
+            <objects>
+                <viewController id="sfy-la-rGL" customClass="MenuContainerViewController" customModule="CCTracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Tu-6k-XJx"/>
+                        <viewControllerLayoutGuide type="bottom" id="HCs-Ai-p2X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xou-mw-M9t">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Lxg-3w-1Vq" appends="YES" id="51R-2v-4JO"/>
+                            <outletCollection property="gestureRecognizers" destination="1m1-Ge-5yK" appends="YES" id="hV0-ws-Omz"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="poj-m9-OlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="Lxg-3w-1Vq">
+                    <connections>
+                        <action selector="swipeRight:" destination="sfy-la-rGL" id="uxn-hV-KP0"/>
+                    </connections>
+                </swipeGestureRecognizer>
+                <swipeGestureRecognizer direction="left" id="1m1-Ge-5yK">
+                    <connections>
+                        <action selector="swipeLeft:" destination="sfy-la-rGL" id="P3J-7q-xqp"/>
+                    </connections>
+                </swipeGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-2092" y="380"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="JYU-eX-BYm">
+            <objects>
+                <navigationController id="o34-dn-ICx" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fm1-W0-dyX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q7Z-U3-xrZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1432" y="380"/>
+        </scene>
         <!--Home View-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -206,7 +254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-600" y="380"/>
+            <point key="canvasLocation" x="-648" y="380"/>
         </scene>
         <!--Progression View Controller-->
         <scene sceneID="trV-ec-m3N">
@@ -225,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HTK-9h-sNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="798"/>
+            <point key="canvasLocation" x="-648" y="1094"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="JOA-ls-nQv">
@@ -244,7 +292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O7y-uz-dGW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="73" y="1514"/>
+            <point key="canvasLocation" x="67" y="1094"/>
         </scene>
         <!--Exercise View Controller-->
         <scene sceneID="4p6-09-RXb">
@@ -279,11 +327,11 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ExerciseCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExerciseCell" rowHeight="68" id="pje-nO-SPC" customClass="ExerciseCell" customModule="CCTracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="68"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" tableViewCell="pje-nO-SPC" id="JzK-O7-LA6">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pje-nO-SPC" id="JzK-O7-LA6">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="icon_pullUp_white" translatesAutoresizingMaskIntoConstraints="NO" id="YbZ-p5-SLI">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pullUp_white" translatesAutoresizingMaskIntoConstraints="NO" id="YbZ-p5-SLI">
                                                     <rect key="frame" x="8" y="8" width="49" height="52"/>
                                                     <animations/>
                                                     <constraints>
@@ -291,7 +339,7 @@
                                                         <constraint firstAttribute="height" constant="52" id="mWz-Js-LAA"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Pullups Step One: Horizontal pulls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="z1y-Aj-pF6">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pullups Step One: Horizontal pulls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="z1y-Aj-pF6">
                                                     <rect key="frame" x="65" y="8" width="341" height="52"/>
                                                     <animations/>
                                                     <constraints>
@@ -301,14 +349,14 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA1-uV-YiT">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA1-uV-YiT">
                                                     <rect key="frame" x="8" y="8" width="398" height="30"/>
                                                     <animations/>
                                                     <connections>
                                                         <action selector="selectExercise:" destination="eLY-9Z-8yf" eventType="touchUpInside" id="n0c-Bo-UiT"/>
                                                     </connections>
                                                 </button>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-fg-GhL" customClass="TrainingView" customModule="CCTracker" customModuleProvider="target">
+                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-fg-GhL" customClass="TrainingView" customModule="CCTracker" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="60" width="398" height="431"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -400,7 +448,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6t5-AJ-sCe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-200" y="-750"/>
+            <point key="canvasLocation" x="-741" y="-450"/>
         </scene>
         <!--Schedule View-->
         <scene sceneID="IlI-WU-0jw">
@@ -1124,7 +1172,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbO-BD-UXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="61" y="74"/>
+            <point key="canvasLocation" x="-26" y="-450"/>
         </scene>
         <!--Menu Module View-->
         <scene sceneID="lQe-f7-0YV">
@@ -1220,7 +1268,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4v8-B2-1Os" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-600" y="1046"/>
+            <point key="canvasLocation" x="-1432" y="1094"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Ql6-64-B0L">
@@ -1239,6 +1287,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6p-3h-e1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="67" y="380"/>
         </scene>
     </scenes>
     <resources>

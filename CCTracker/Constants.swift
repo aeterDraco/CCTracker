@@ -28,6 +28,11 @@ protocol MenuProtocol: class {
   weak var delegate: LeftMenuProtocol? { get set }
 }
 
+struct Notifications {
+  static let HomeSelected = "HomeSelected"
+  static let ScheduleSelected = "ScheduleSelected"
+}
+
 
 struct Defaults {
   static let schedule      = "kSchedule"
@@ -62,6 +67,7 @@ struct ViewId {
   static let Progression = "ProgressionViewController"
   static let Settings    = "SettingsViewController"
   static let Menu        = "MenuViewController"
+  static let Container   = "MenuContainerViewController"
   
   static func fetchValue(intValue: Int) -> String {
     switch (intValue) {

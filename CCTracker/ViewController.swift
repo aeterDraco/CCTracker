@@ -8,18 +8,46 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainNavigationController: UINavigationController {
 
+  private var homeSelectedObserver: NSObjectProtocol!
+  private var scheduleSelectedObserver: NSObjectProtocol!
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    addObservers()
+  }
+  
   override func viewDidLoad() {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
   }
 
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+    removeObservers()
   }
-
+  
+  private func addObservers() {
+    let center = NSNotificationCenter.defaultCenter()
+    let storyboard = UIStoryboard(name: "Main", bundle: nil)
+    
+    homeSelectedObserver = center.addObserverForName(Notifications.HomeSelected, object: nil, queue: nil) { (notification: NSNotification!) in
+      let mvc = storyboard.instantiateViewControllerWithIdentifier(ViewId.Home)
+      self.setViewControllers([mvc], animated: true)
+    }
+    
+    scheduleSelectedObserver = center.addObserverForName(Notifications.ScheduleSelected, object: nil, queue: nil) { (notification: NSNotification!) in
+      let mvc = storyboard.instantiateViewControllerWithIdentifier(ViewId.Schedule)
+      self.setViewControllers([mvc], animated: true)
+    }
+  }
+  
+  private func removeObservers() {
+    let center = NSNotificationCenter.defaultCenter()
+    
+    center.removeObserver(homeSelectedObserver)
+    center.removeObserver(scheduleSelectedObserver)
+  }
 
 }
 

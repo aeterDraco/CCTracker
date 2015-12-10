@@ -30,24 +30,47 @@ class DateManager {
   static func obtainDayName(weekDayInt weekDay:Int) -> Days{
     let weekDayName: Days
     switch(weekDay) {
-      case Days.Sunday.rawValue:
-        weekDayName = Days.Sunday
-      case Days.Monday.rawValue:
-        weekDayName = Days.Monday
-      case Days.Tuesday.rawValue:
-        weekDayName = Days.Tuesday
-      case Days.Wednesday.rawValue:
-        weekDayName = Days.Wednesday
-      case Days.Thursday.rawValue:
-        weekDayName = Days.Thursday
-      case Days.Friday.rawValue:
-        weekDayName = Days.Friday
-      case Days.Saturday.rawValue:
-        weekDayName = Days.Saturday
-      default:
-        weekDayName = Days.init(rawValue: 0)!
+    case Days.Sunday.rawValue:
+      weekDayName = Days.Sunday
+    case Days.Monday.rawValue:
+      weekDayName = Days.Monday
+    case Days.Tuesday.rawValue:
+      weekDayName = Days.Tuesday
+    case Days.Wednesday.rawValue:
+      weekDayName = Days.Wednesday
+    case Days.Thursday.rawValue:
+      weekDayName = Days.Thursday
+    case Days.Friday.rawValue:
+      weekDayName = Days.Friday
+    case Days.Saturday.rawValue:
+      weekDayName = Days.Saturday
+    default:
+      weekDayName = Days.init(rawValue: 0)!
     }
     return weekDayName
   }
+
+//  static func obtainDayName(weekDayString weekDay:String) -> Days{
+//    let weekDayName: Days
+//    switch(weekDay) {
+//    case Days.Sunday:
+//      weekDayName = Days.Sunday
+//    case Days.Monday:
+//      weekDayName = Days.Monday
+//    case Days.Tuesday:
+//      weekDayName = Days.Tuesday
+//    case Days.Wednesday:
+//      weekDayName = Days.Wednesday
+//    case Days.Thursday:
+//      weekDayName = Days.Thursday
+//    case Days.Friday:
+//      weekDayName = Days.Friday
+//    case Days.Saturday:
+//      weekDayName = Days.Saturday
+//    default:
+//      weekDayName = Days.init(rawValue: 0)!
+//    }
+//    return weekDayName
+//  }
 
 }

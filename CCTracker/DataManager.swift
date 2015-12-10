@@ -30,4 +30,19 @@ class DataManager {
     }
   }
   
+  func fetchCCworkoutWithName(workoutName: String, completionHandler: CompletionHandlerType) {
+    let selectedCCTraining = trainingManager.fetchWorkoutWithName(workoutName)
+    completionHandler(Result.Success(selectedCCTraining))
+  }
+  
+  func saveTraining(trainingToSave: Training, completionhandler: CompletionHandlerType) {
+    trainingManager.saveTraining(trainingToSave) { (result) -> Void in
+      switch (result) {
+        case .Success(_):
+          completionhandler(Result.Success(true))
+        case .Failure(_):
+          completionhandler(Result.Failure(.LocalDataManagerFailure))
+      }
+    }
+  }
 }

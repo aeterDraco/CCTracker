@@ -16,6 +16,8 @@ protocol ScheduleViewProtocol: class, ViewProtocol
   func updateScheduleView(currentWorkoutSchedule: [Days: [Movement]])
   func updateWorkoutName(currentWorkoutName: String)
   func updateCCWorkoutSelected(isCCWorkout: Bool)
+  func displayFailureSavingWorkout()
+  func displaySuccessSavingWorkout()
 }
 
 protocol ScheduleWireFrameProtocol: class, MenuProtocol
@@ -37,8 +39,9 @@ protocol SchedulePresenterProtocol: class
   * Add here your methods for communication VIEW -> PRESENTER
   */
   
-//  func fetchConvictConditioningWorkoutNames()
   func updateView()
+  func fetchCCWorkoutWithName(workoutName: String)
+  func saveWorkout(workoutSchedule: Set<Int>, workoutName: String, isCCWorkout: Bool)
 }
 
 protocol ScheduleInteractorOutputProtocol: class
@@ -49,6 +52,9 @@ protocol ScheduleInteractorOutputProtocol: class
 
   func convictConditioningWorkoutNames(workoutNames: [String])
   func currentWorkout(currentWorkout: Training)
+  func workoutSaveSuccesfull()
+  func workoutSaveFailed()
+//  func ccSelectedWorkout(selectedWorkout: Training) for now functionality is the same as currentWorkout
 }
 
 protocol ScheduleInteractorInputProtocol: class
@@ -62,6 +68,8 @@ protocol ScheduleInteractorInputProtocol: class
   
   func fetchConvictConditioningWorkoutNames(completionHandler: CompletionHandlerType)
   func fetchCurrentWorkout()
+  func fetchCCWorkoutWithName(workoutName: String)
+  func saveWorkout(workoutSchedule: Set<Int>, workoutName: String, isCCWorkout: Bool)
 }
 
 protocol ScheduleDataManagerInputProtocol: class
@@ -71,6 +79,7 @@ protocol ScheduleDataManagerInputProtocol: class
   */
   
   func fetchConvictConditioningWorkoutNames()
+  func fetchCCWorkoutWithName(workoutName: String)
 }
 
 protocol ScheduleAPIDataManagerInputProtocol: class
@@ -88,4 +97,7 @@ protocol ScheduleLocalDataManagerInputProtocol: class
 
   func fetchConvictConditioningWorkoutNames(completionHandler: CompletionHandlerType)
   func fetchCurrentWorkout(completionHandler: CompletionHandlerType)
+  func fetchCCWorkoutWithName(workoutName: String, completionHandler: CompletionHandlerType)
+  func saveWorkout(trainingToSave: Training, completionHandler: CompletionHandlerType)
+  
 }

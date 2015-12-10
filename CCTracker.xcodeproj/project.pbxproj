@@ -15,6 +15,7 @@
 		4504E1B51BFF37040018A0C7 /* Bridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4504E1B41BFF37040018A0C7 /* Bridge.swift */; };
 		453404F71C06F67F001D77AC /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453404F61C06F67F001D77AC /* AppRouter.swift */; };
 		453404FA1C070730001D77AC /* HomeWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453404F91C070730001D77AC /* HomeWireFrame.swift */; };
+		4537F2D41C1866AA0011819D /* MenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537F2D31C1866AA0011819D /* MenuContainerViewController.swift */; };
 		453AE5F21C0323490092E0BF /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453AE5F11C0323490092E0BF /* AppDependencies.swift */; };
 		454E7C081BF9F849005F0EBC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E7C071BF9F849005F0EBC /* MenuViewController.swift */; };
 		4555337E1BFF34720036E3EB /* Bridge.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4555337D1BFF34720036E3EB /* Bridge.xcassets */; };
@@ -103,6 +104,7 @@
 		4504E1B41BFF37040018A0C7 /* Bridge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Bridge.swift; path = Classes/Common/Model/Movements/Bridge.swift; sourceTree = "<group>"; };
 		453404F61C06F67F001D77AC /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		453404F91C070730001D77AC /* HomeWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWireFrame.swift; sourceTree = "<group>"; };
+		4537F2D31C1866AA0011819D /* MenuContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerViewController.swift; sourceTree = "<group>"; };
 		453AE5F11C0323490092E0BF /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
 		454E7C071BF9F849005F0EBC /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Classes/Common/SlideMenu/MenuViewController.swift; sourceTree = "<group>"; };
 		4555337D1BFF34720036E3EB /* Bridge.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bridge.xcassets; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 			isa = PBXGroup;
 			children = (
 				459B89B31BFF6D12000C2E8E /* MenuModuleView.swift */,
+				4537F2D31C1866AA0011819D /* MenuContainerViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -779,6 +782,7 @@
 				84547A8C1BBA872900476EE8 /* HomeViewController.swift in Sources */,
 				4567AA3D1C084F6E0099D2A8 /* ScheduleView.swift in Sources */,
 				844E0A9B1BBBCBF800D5A582 /* ProgressionViewController.swift in Sources */,
+				4537F2D41C1866AA0011819D /* MenuContainerViewController.swift in Sources */,
 				4567AA411C0876620099D2A8 /* WorkoutDataManager.swift in Sources */,
 				454E7C081BF9F849005F0EBC /* MenuViewController.swift in Sources */,
 				45A1E2B81C05B65700EA4D03 /* HomeItem.swift in Sources */,

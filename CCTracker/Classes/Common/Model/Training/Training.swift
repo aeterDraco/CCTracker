@@ -20,16 +20,23 @@ class Training: TrainingDataManagerProtocol {
     isCCWorkout = false
   }
 
-  init(trainingInfo: [String:[String]], trainingName: String, isCCWorkout: Bool) {
+  init(trainingSchedule: [Days:[Movement]], trainingName: String, isCCWorkout: Bool) {
+    self.name        = trainingName
+    self.schedule    = trainingSchedule
+    self.isCCWorkout = isCCWorkout
+  }
+  
+  init(trainingInfo: [Int:[String]], trainingName: String, isCCWorkout: Bool) {
     self.schedule = [Days:[Movement]]()
     self.isCCWorkout = isCCWorkout
 
     for key in trainingInfo.keys {
       var movements = [Movement]()
       for movementName in trainingInfo[key]! {
-        movements.append(createMovementFromName(movementName))
+        movements.append(Training.createMovementFromName(movementName))
       }
-      let dayKey = DateManager.obtainDayName(weekDayInt: Int(key)!)
+      
+      let dayKey = DateManager.obtainDayName(weekDayInt: key)
       self.schedule[dayKey] = movements
     }
     self.name = trainingName
@@ -51,7 +58,7 @@ class Training: TrainingDataManagerProtocol {
     return list
   }
 
-  //This function reads the stored workout program and returns an array whit the movemnts for the day
+  //This function reads the stored workout program and returns an array whit the movements for the day
   
   func generateTrainingInfo() -> [String : [String]] {
     var dictionary = [String:[String]]()
@@ -60,7 +67,7 @@ class Training: TrainingDataManagerProtocol {
       for movement in schedule[dayKey]! {
         movementNames.append(movement.name)
       }
-      dictionary[String("\(dayKey)")] = movementNames
+      dictionary["\(dayKey.rawValue)"] = movementNames
     }
     return dictionary
   }
@@ -73,7 +80,7 @@ class Training: TrainingDataManagerProtocol {
     return self.isCCWorkout
   }
   
-  func createWorkoutWithSet(exercises:Set<Int>) ->[Days:[Movement]] {
+  static func createWorkoutWithSet(exercises:Set<Int>) ->[Days:[Movement]] {
     var workout = setMovementsInWorkout(exercises)
     for key in workout.keys {
       if workout[key]?.count == 0 {
@@ -97,7 +104,7 @@ class Training: TrainingDataManagerProtocol {
 //    return training
 //  }
 
-  func createMovementFromName(movementName:String) ->Movement {
+  private static func createMovementFromName(movementName:String) ->Movement {
     if movementName == Movements.Pushup {
       return Pushup()
     }else if movementName == Movements.Squat {
@@ -115,7 +122,7 @@ class Training: TrainingDataManagerProtocol {
     }
   }
   
-  private func setMovementsInWorkout(trainingSet:Set<Int>) -> [Days:[Movement]] {
+  private static func setMovementsInWorkout(trainingSet:Set<Int>) -> [Days:[Movement]] {
     var workout = [Days:[Movement]]()
     var mon  = [Movement]()
     var tue  = [Movement]()
@@ -157,7 +164,7 @@ class Training: TrainingDataManagerProtocol {
     return workout
   }
   
-  func getMovementFromValue(index:Int) -> Movement {
+  private static func getMovementFromValue(index:Int) -> Movement {
     if index < 7 {
       return Pushup()
     }else if index < 14 {

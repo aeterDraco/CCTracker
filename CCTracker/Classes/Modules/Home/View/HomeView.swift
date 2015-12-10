@@ -29,7 +29,7 @@ class HomeView: UIViewController, HomeViewProtocol
   override func viewDidLoad() {
     super.viewDidLoad()
     btnMenu.addTarget(self, action: "toggleLeft", forControlEvents: UIControlEvents.TouchUpInside)
-//    tableTraining.tableFooterView = UIView()
+    tableTraining.tableFooterView = UIView()
   }
   
   override func viewWillAppear(animated: Bool) {
