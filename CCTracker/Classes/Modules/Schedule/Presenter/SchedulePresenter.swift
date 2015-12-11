@@ -40,9 +40,11 @@ class SchedulePresenter: SchedulePresenterProtocol, ScheduleInteractorOutputProt
   }
  
   func currentWorkout(currentWorkout: Training) {
-    self.view!.updateScheduleView(currentWorkout.schedule)
-    self.view!.updateWorkoutName(currentWorkout.name)
-    self.view!.updateCCWorkoutSelected(currentWorkout.isCCWorkout)
+    self.view!.clearScheduleView() { (result) -> Void in
+      self.view!.updateScheduleView(currentWorkout.schedule)
+      self.view!.updateWorkoutName(currentWorkout.name)
+      self.view!.updateCCWorkoutSelected(currentWorkout.isCCWorkout)
+    }
   }
   
   func workoutSaveSuccesfull() {

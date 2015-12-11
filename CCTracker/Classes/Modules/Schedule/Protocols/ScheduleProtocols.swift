@@ -12,6 +12,7 @@ protocol ScheduleViewProtocol: class, ViewProtocol
   * Add here your methods for communication PRESENTER -> VIEW
   */
   
+  func clearScheduleView(completionHandler: CompletionHandlerType)
   func updateCCWorkoutsPicker(workoutNames: [String])
   func updateScheduleView(currentWorkoutSchedule: [Days: [Movement]])
   func updateWorkoutName(currentWorkoutName: String)

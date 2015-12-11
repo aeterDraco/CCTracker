@@ -61,6 +61,16 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
   
   //MARK: - ScheduleViewProtocol Methods
   
+  func clearScheduleView(completionHandler: CompletionHandlerType) {
+    selectedProgram = -1
+    btnCheckWorkout.selected = false
+    lblSelectedWorkout.text = ""
+    selectedWorkout = Set<Int>()
+    collectionView.reloadData()
+    
+    completionHandler(Result.Success(true))
+  }
+  
   func updateCCWorkoutsPicker(workoutNames: [String]) {
     self.arrayWorkouts = workoutNames
     self.pickerWorkouts.reloadAllComponents()
@@ -72,6 +82,7 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
   }
   
   func updateWorkoutName(currentWorkoutName: String) {
+    print("newName: \(currentWorkoutName)")
     lblSelectedWorkout.text = currentWorkoutName
   }
   
@@ -107,25 +118,28 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
 
   //MARK: - IBAction Methods
   
-  @IBAction func checkWorkout(sender: AnyObject) {
-    let selectedWorkoutName = self.arrayWorkouts[self.pickerWorkouts.selectedRowInComponent(0)]
-    self.presenter!.fetchCCWorkoutWithName(selectedWorkoutName)
+  @IBAction func checkWorkoutAction(sender: UIButton) {
+    print("checkWoerkout \(btnCheckWorkout.selected)")
+    if btnCheckWorkout.selected {
+      self.clearScheduleView() { (result) -> Void in
+      }
+    } else {
+      let selectedWorkoutName = self.arrayWorkouts[self.pickerWorkouts.selectedRowInComponent(0)]
+      self.presenter!.fetchCCWorkoutWithName(selectedWorkoutName)
+    }
   }
   
-  @IBAction func selectDay(sender: UIButton) {
+  @IBAction func selectDayAction(sender: UIButton) {
     print(sender.tag)
     sender.selected = !sender.selected
   }
   
-  @IBAction func clearSchedule(sender: AnyObject) {
-    selectedProgram = -1
-    btnCheckWorkout.selected = false
-    lblSelectedWorkout.hidden = true
-    selectedWorkout = Set<Int>()
-    collectionView.reloadData()
+  @IBAction func clearScheduleAction(sender: AnyObject) {
+    self.clearScheduleView() { (result) -> Void in
+    }
   }
   
-  @IBAction func selectTraining(sender: AnyObject) {
+  @IBAction func selectTrainingAction(sender: AnyObject) {
     self.presenter!.saveWorkout(selectedWorkout, workoutName: lblSelectedWorkout.text!, isCCWorkout: isCCWorkout)
   }
 
@@ -134,7 +148,15 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
   
   func showWorkout(workout:[Days:[Movement]]) {
     for dayKey in workout.keys {
-      let baseIndex = dayKey.rawValue
+      var baseIndex = dayKey.rawValue
+      
+      switch (baseIndex) {
+        case 2:
+          baseIndex = 0
+        default:
+          baseIndex -= 2
+      }
+      
       for movement in workout[dayKey]!{
         let movIndex = indexForMovement(movement)
         if  movIndex >= 0 {
@@ -210,8 +232,9 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
       cell.imgCheckbox.highlighted = false
     } else {
       selectedWorkout.insert(indexPath.row)
-      print("\(cell.imgCheckbox.tag)")
+//      print("\(cell.imgCheckbox.tag)")
     }
+    print("didSelectItemAtIndexPath -> \(cell.imgCheckbox.tag) -> \(cell.selected)")
   }
   
   func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
@@ -221,6 +244,7 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
     } else {
       cell.imgCheckbox.highlighted = false
     }
+    print("didDeselectItemAtIndexPath -> \(cell.imgCheckbox.tag) -> \(selectedWorkout.contains(indexPath.row))")
   }
 
   //MARK: - UIPicker Delegate Methods

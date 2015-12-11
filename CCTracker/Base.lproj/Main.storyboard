@@ -478,7 +478,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="clearSchedule:" destination="jlB-y4-adC" eventType="touchUpInside" id="n6W-5c-k6m"/>
+                                    <action selector="clearScheduleAction:" destination="jlB-y4-adC" eventType="touchUpInside" id="zce-jx-8gg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" alpha="0.67000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WC5-UA-iQa" userLabel="Menu">
@@ -948,7 +948,7 @@
                                                     <color key="titleColor" white="1" alpha="0.67000000000000004" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="selectTraining:" destination="jlB-y4-adC" eventType="touchUpInside" id="hvH-Yn-mdG"/>
+                                                    <action selector="selectTrainingAction:" destination="jlB-y4-adC" eventType="touchUpInside" id="Dk0-lV-JG9"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1099,7 +1099,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <action selector="checkWorkout:" destination="jlB-y4-adC" eventType="touchUpInside" id="DyA-UL-3Tg"/>
+                                            <action selector="checkWorkoutAction:" destination="jlB-y4-adC" eventType="touchUpInside" id="fa8-F1-1dH"/>
                                         </connections>
                                     </button>
                                 </subviews>
