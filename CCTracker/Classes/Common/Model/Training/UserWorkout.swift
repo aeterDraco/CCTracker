@@ -27,6 +27,8 @@ class UserWorkout {
     }
   }
   
+  
+  //Take out this method to a Data Manager
   func saveCurrentSteps() {
     let defaults = NSUserDefaults.standardUserDefaults()
     defaults.setObject(currentSteps, forKey: Defaults.currentSteps)

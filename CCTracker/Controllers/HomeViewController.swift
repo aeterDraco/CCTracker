@@ -43,7 +43,7 @@ class HomeViewController: UIViewController  {
   
   func loadTraining(){
     training = Training()
-    todaysTraining = training.readTodaysTraining()
+//    todaysTraining = training.readTodaysTraining()
     if todaysTraining.count > 0 {
       btnStartTraining.hidden  = false
       btnSelectTraining.hidden = true

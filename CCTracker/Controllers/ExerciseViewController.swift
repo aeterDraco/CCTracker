@@ -42,11 +42,11 @@ class ExerciseViewController : UIViewController, UITableViewDelegate {
     training = Training()
     arrayTrainings = training.workoutList()
     todaysTraining = [String]()
-    let todaysTrainings = training.readTodaysTraining()
+//    let todaysTrainings = training.readTodaysTraining()
 
-    for movement in todaysTrainings {
-      todaysTraining.append(movement.name)
-    }
+//    for movement in todaysTrainings {
+//      todaysTraining.append(movement.name)
+//    }
     
     tableExercises.reloadData()
   }

@@ -51,7 +51,7 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
   
   override func viewDidAppear(animated: Bool) {
     super.viewDidAppear(animated)
-    loadTraining()
+//    loadTraining()
   }
   
   override func viewDidLayoutSubviews() {
@@ -63,73 +63,73 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
   
   //MARK: - Methods
   
-  func loadTraining(){
-    currentWorkout = training.getWorkoutSchedule()
-    if currentWorkout.count > 0 {
-      setPreMadeWorkoutName()
-      showWorkout(currentWorkout)
-    } else {
-        lblSelectedWorkout.text = ""
-    }
-  }
-  
-  func setPreMadeWorkoutName() {
-    lblSelectedWorkout.text = training.getWorkoutName()
-    lblSelectedWorkout.hidden = false
+//  func loadTraining(){
+//    currentWorkout = training.getWorkoutSchedule()
+//    if currentWorkout.count > 0 {
+//      setPreMadeWorkoutName()
+//      showWorkout(currentWorkout)
+//    } else {
+//        lblSelectedWorkout.text = ""
+//    }
+//  }
+//  
+//  func setPreMadeWorkoutName() {
+//    lblSelectedWorkout.text = training.getWorkoutName()
+//    lblSelectedWorkout.hidden = false
+//
+//    for name in arrayWorkouts {
+//      if name == lblSelectedWorkout.text {
+//        selectedProgram = arrayWorkouts.indexOf(name)!
+//        pickerWorkouts.selectRow(selectedProgram, inComponent: 0, animated: true)
+//        btnCheckWorkout.selected = true
+//      }
+//    }
+//  }
 
-    for name in arrayWorkouts {
-      if name == lblSelectedWorkout.text {
-        selectedProgram = arrayWorkouts.indexOf(name)!
-        pickerWorkouts.selectRow(selectedProgram, inComponent: 0, animated: true)
-        btnCheckWorkout.selected = true
-      }
-    }
-  }
+//  func showWorkout(workout:[String:[Movement]]) {
+//    for key in workout.keys {
+//      let baseIndex = indexForDay(key)
+//      for movement in workout[key]!{
+//        let movIndex = indexForMovement(movement)
+//        if  movIndex >= 0 {
+//          selectedWorkout.insert(baseIndex+movIndex)
+//        }
+//      }
+//    }
+//    print("\(selectedWorkout)")
+//    collectionView.reloadData()
+//  }
+//
+//  func clearWorkout(workout:[String:[Movement]]) {
+//    for key in workout.keys {
+//      let baseIndex = indexForDay(key)
+//      for movement in workout[key]!{
+//        let movIndex = indexForMovement(movement)
+//        if  movIndex >= 0 {
+//          selectedWorkout.remove(baseIndex+movIndex)
+//        }
+//      }
+//    }
+//    collectionView.reloadData()
+//  }
 
-  func showWorkout(workout:[String:[Movement]]) {
-    for key in workout.keys {
-      let baseIndex = indexForDay(key)
-      for movement in workout[key]!{
-        let movIndex = indexForMovement(movement)
-        if  movIndex >= 0 {
-          selectedWorkout.insert(baseIndex+movIndex)
-        }
-      }
-    }
-    print("\(selectedWorkout)")
-    collectionView.reloadData()
-  }
-
-  func clearWorkout(workout:[String:[Movement]]) {
-    for key in workout.keys {
-      let baseIndex = indexForDay(key)
-      for movement in workout[key]!{
-        let movIndex = indexForMovement(movement)
-        if  movIndex >= 0 {
-          selectedWorkout.remove(baseIndex+movIndex)
-        }
-      }
-    }
-    collectionView.reloadData()
-  }
-
-  func indexForDay(selectedDay:String) ->Int {
-    if selectedDay == Days.Monday {
-      return 0
-    }else if selectedDay == Days.Tuesday {
-      return 1
-    }else if selectedDay == Days.Wednesday {
-      return 2
-    }else if selectedDay == Days.Thursday {
-      return 3
-    }else if selectedDay == Days.Friday {
-      return 4
-    }else if selectedDay == Days.Saturday {
-      return 5
-    }else {
-      return 6
-    }
-  }
+//  func indexForDay(selectedDay:String) ->Int {
+//    if selectedDay == Days.Monday {
+//      return 0
+//    }else if selectedDay == Days.Tuesday {
+//      return 1
+//    }else if selectedDay == Days.Wednesday {
+//      return 2
+//    }else if selectedDay == Days.Thursday {
+//      return 3
+//    }else if selectedDay == Days.Friday {
+//      return 4
+//    }else if selectedDay == Days.Saturday {
+//      return 5
+//    }else {
+//      return 6
+//    }
+//  }
   
   func indexForMovement(excersise:Movement) ->Int {
     if excersise is Pushup  {
@@ -228,34 +228,34 @@ class ScheduleViewController:UIViewController, UICollectionViewDataSource, UICol
     
     if btnCheckWorkout.selected {
       if selectedProgram != -1{
-        clearWorkout(training.convictWorkout(workoutName: arrayWorkouts[selectedProgram]))
+//        clearWorkout(training.convictWorkout(workoutName: arrayWorkouts[selectedProgram]))
       }
-      selectedProgram = pickerWorkouts.selectedRowInComponent(0)
-      showWorkout(training.convictWorkout(workoutName: arrayWorkouts[selectedProgram]))
-      lblSelectedWorkout.hidden = false
-      lblSelectedWorkout.text = arrayWorkouts[selectedProgram]
+//      selectedProgram = pickerWorkouts.selectedRowInComponent(0)
+//      showWorkout(training.convictWorkout(workoutName: arrayWorkouts[selectedProgram]))
+//      lblSelectedWorkout.hidden = false
+//      lblSelectedWorkout.text = arrayWorkouts[selectedProgram]
     }else {
-      clearWorkout(training.convictWorkout(workoutName: arrayWorkouts[pickerWorkouts.selectedRowInComponent(0)]))
-      lblSelectedWorkout.hidden = true
-      selectedProgram = -1
+//      clearWorkout(training.convictWorkout(workoutName: arrayWorkouts[pickerWorkouts.selectedRowInComponent(0)]))
+//      lblSelectedWorkout.hidden = true
+//      selectedProgram = -1
    }
   }
 
   @IBAction func selectTraining(sender: AnyObject) {
-    currentWorkout = training.createWorkoutWithSet(selectedWorkout)
-    print("\(currentWorkout)")
-    let actionSheetController: UIAlertController
-    if training.saveWorkout(currentWorkout, workoutName: lblSelectedWorkout.text!) {
-      actionSheetController = UIAlertController(title:nil, message: "Traning schedule saved!", preferredStyle: .Alert)
-    }else {
-      actionSheetController = UIAlertController(title:nil, message: "Traning schedule could not be saved!", preferredStyle: .Alert)
-    }
-    
-    let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .Cancel) { action -> Void in
-      //Do some stuff
-    }
-    actionSheetController.addAction(cancelAction)
-    self.presentViewController(actionSheetController, animated: true, completion: nil)
+//    currentWorkout = training.createWorkoutWithSet(selectedWorkout)
+//    print("\(currentWorkout)")
+//    let actionSheetController: UIAlertController
+//    if training.saveWorkout(currentWorkout, workoutName: lblSelectedWorkout.text!) {
+//      actionSheetController = UIAlertController(title:nil, message: "Traning schedule saved!", preferredStyle: .Alert)
+//    }else {
+//      actionSheetController = UIAlertController(title:nil, message: "Traning schedule could not be saved!", preferredStyle: .Alert)
+//    }
+//    
+//    let cancelAction: UIAlertAction = UIAlertAction(title: "Ok", style: .Cancel) { action -> Void in
+//      //Do some stuff
+//    }
+//    actionSheetController.addAction(cancelAction)
+//    self.presentViewController(actionSheetController, animated: true, completion: nil)
   }
 
   //MARK: - UIPicker Delegate Methods
