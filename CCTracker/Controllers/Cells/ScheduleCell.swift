@@ -12,4 +12,7 @@ import UIKit
 class ScheduleCell: UICollectionViewCell {
   
   @IBOutlet weak var imgCheckbox: UIImageView!
+  
+  @IBOutlet weak var btnSelect: UIButton!
+  
 }

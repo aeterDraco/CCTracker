@@ -984,17 +984,30 @@
                                                                 <constraint firstAttribute="width" secondItem="X7b-Ap-G74" secondAttribute="height" multiplier="1:1" id="kni-m1-7lv"/>
                                                             </constraints>
                                                         </imageView>
+                                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7CG-M5-OlJ">
+                                                            <rect key="frame" x="5" y="5" width="40" height="40"/>
+                                                            <animations/>
+                                                            <state key="selected" image="checkbox"/>
+                                                            <connections>
+                                                                <action selector="selectScheduleCell:" destination="jlB-y4-adC" eventType="touchUpInside" id="2FZ-eb-X6f"/>
+                                                            </connections>
+                                                        </button>
                                                     </subviews>
                                                     <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                                 <animations/>
                                                 <constraints>
+                                                    <constraint firstItem="7CG-M5-OlJ" firstAttribute="width" secondItem="X7b-Ap-G74" secondAttribute="width" id="1hK-KW-g1d"/>
+                                                    <constraint firstItem="7CG-M5-OlJ" firstAttribute="height" secondItem="X7b-Ap-G74" secondAttribute="height" id="JXm-Wb-q6G"/>
+                                                    <constraint firstItem="7CG-M5-OlJ" firstAttribute="centerX" secondItem="X7b-Ap-G74" secondAttribute="centerX" id="KUk-Td-OTd"/>
                                                     <constraint firstItem="X7b-Ap-G74" firstAttribute="centerY" secondItem="qR5-Ln-BA8" secondAttribute="centerY" id="Pvn-Sc-4A0"/>
+                                                    <constraint firstItem="7CG-M5-OlJ" firstAttribute="centerY" secondItem="X7b-Ap-G74" secondAttribute="centerY" id="ZnI-A7-iUH"/>
                                                     <constraint firstItem="X7b-Ap-G74" firstAttribute="centerX" secondItem="qR5-Ln-BA8" secondAttribute="centerX" id="uUi-jD-2Tf"/>
                                                     <constraint firstItem="X7b-Ap-G74" firstAttribute="width" secondItem="qR5-Ln-BA8" secondAttribute="width" multiplier="0.8" id="uvZ-Gw-2Fr"/>
                                                 </constraints>
                                                 <connections>
+                                                    <outlet property="btnSelect" destination="7CG-M5-OlJ" id="Jsp-B5-Nhj"/>
                                                     <outlet property="imgCheckbox" destination="X7b-Ap-G74" id="1Xc-LT-Cok"/>
                                                 </connections>
                                             </collectionViewCell>

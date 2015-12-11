@@ -206,11 +206,60 @@
 			path = WireFrame;
 			sourceTree = "<group>";
 		};
-		4542A5391C1ADAC300776E59 /* New Group */ = {
+		4542A5391C1ADAC300776E59 /* Exercise */ = {
+			isa = PBXGroup;
+			children = (
+				4542A53A1C1ADB4600776E59 /* DataManager */,
+				4542A53B1C1ADB4D00776E59 /* Interactor */,
+				4542A53F1C1ADB7B00776E59 /* Presenter */,
+				4542A53E1C1ADB7100776E59 /* Protocol */,
+				4542A53D1C1ADB6600776E59 /* View */,
+				4542A53C1C1ADB5B00776E59 /* WireFrame */,
+			);
+			name = Exercise;
+			path = Classes/Modules/Exercise;
+			sourceTree = "<group>";
+		};
+		4542A53A1C1ADB4600776E59 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = "New Group";
+			path = DataManager;
+			sourceTree = "<group>";
+		};
+		4542A53B1C1ADB4D00776E59 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4542A53C1C1ADB5B00776E59 /* WireFrame */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = WireFrame;
+			sourceTree = "<group>";
+		};
+		4542A53D1C1ADB6600776E59 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4542A53E1C1ADB7100776E59 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		4542A53F1C1ADB7B00776E59 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		454E7C031BF9F63E005F0EBC /* Classes */ = {
@@ -237,7 +286,7 @@
 		454E7C051BF9F65A005F0EBC /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				4542A5391C1ADAC300776E59 /* New Group */,
+				4542A5391C1ADAC300776E59 /* Exercise */,
 				4567AA2A1C084B910099D2A8 /* Schedule */,
 				45A1E2AA1C05B16A00EA4D03 /* Home */,
 				459B89A41BFF6BF7000C2E8E /* Menu */,

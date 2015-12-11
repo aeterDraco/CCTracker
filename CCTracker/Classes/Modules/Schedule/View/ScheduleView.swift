@@ -47,6 +47,7 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
     layout.minimumLineSpacing = 0
     
     collectionView.collectionViewLayout = layout
+    collectionView.allowsMultipleSelection = true
   }
   
   override func viewDidAppear(animated: Bool) {
@@ -118,8 +119,22 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
 
   //MARK: - IBAction Methods
   
+  @IBAction func selectScheduleCell(sender: UIButton) {
+    let cell = self.collectionView.cellForItemAtIndexPath(NSIndexPath(forItem: sender.tag, inSection: 0)) as! ScheduleCell
+    
+    isCCWorkout = false
+    
+    if cell.imgCheckbox.highlighted {
+      cell.imgCheckbox.highlighted = false
+      selectedWorkout.remove(sender.tag)
+    } else {
+      cell.imgCheckbox.highlighted = true
+      selectedWorkout.insert(sender.tag)
+    }
+
+  }
+  
   @IBAction func checkWorkoutAction(sender: UIButton) {
-    print("checkWoerkout \(btnCheckWorkout.selected)")
     if btnCheckWorkout.selected {
       self.clearScheduleView() { (result) -> Void in
       }
@@ -196,13 +211,14 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
   }
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+//    let cell = collectionView.registerClass(ScheduleCell.classForCoder(), forCellWithReuseIdentifier: reuseIdentifier) as! ScheduleCell
     let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! ScheduleCell
-    cell.imgCheckbox.tag = indexPath.row
+    cell.btnSelect.tag = indexPath.row
     cell.backgroundColor = checkIndexForColor(indexPath.row)
     
     if selectedWorkout.contains(indexPath.row) {
       cell.imgCheckbox.highlighted = true
-    }else {
+    } else {
       cell.imgCheckbox.highlighted = false
     }
     
@@ -222,29 +238,34 @@ class ScheduleView: UIViewController, ScheduleViewProtocol, UICollectionViewData
     layout collectionViewLayout: UICollectionViewLayout,
     sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
       print("collectionsizeforItem: \(CGSize(width: collectionView.frame.size.width, height: collectionView.frame.size.height))")
+      scheduleCellSize = CGSize(width: collectionView.frame.size.width/7, height: collectionView.frame.size.height/6)
       return scheduleCellSize!//CGSize(width: collectionView.frame.size.width/7, height: collectionView.frame.size.height/6)
   }
   
   func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
     let cell = collectionView.cellForItemAtIndexPath(indexPath) as! ScheduleCell
-    if selectedWorkout.contains(indexPath.row) {
-      selectedWorkout.remove(indexPath.row)
-      cell.imgCheckbox.highlighted = false
-    } else {
-      selectedWorkout.insert(indexPath.row)
+//    if selectedWorkout.contains(indexPath.row) {
+//      selectedWorkout.remove(indexPath.row)
+//      cell.imgCheckbox.highlighted = false
+//    } else {
+//      selectedWorkout.insert(indexPath.row)
+//      cell.highlighted = true
 //      print("\(cell.imgCheckbox.tag)")
-    }
+//    }
     print("didSelectItemAtIndexPath -> \(cell.imgCheckbox.tag) -> \(cell.selected)")
   }
   
   func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-    let cell = collectionView.cellForItemAtIndexPath(indexPath) as! ScheduleCell
-    if selectedWorkout.contains(indexPath.row) {
-      cell.imgCheckbox.highlighted = true
-    } else {
-      cell.imgCheckbox.highlighted = false
-    }
-    print("didDeselectItemAtIndexPath -> \(cell.imgCheckbox.tag) -> \(selectedWorkout.contains(indexPath.row))")
+//    let cell = collectionView.cellForItemAtIndexPath(indexPath) as! ScheduleCell
+//    if selectedWorkout.contains(indexPath.row) {
+//      cell.imgCheckbox.highlighted = true
+//    } else {
+//      cell.imgCheckbox.highlighted = false
+//    }
+//    cell.imgCheckbox.highlighted = false
+//    selectedWorkout.remove(indexPath.row)
+//    
+//    print("didDeselectItemAtIndexPath -> \(cell.imgCheckbox.tag) -> \(selectedWorkout.contains(indexPath.row))")
   }
 
   //MARK: - UIPicker Delegate Methods
