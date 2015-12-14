@@ -57,12 +57,12 @@ class AppRouter {
         return HomeWireFrame.initializeModule(leftMenuProtocol)
       case .Schedule:
         return ScheduleWireFrame.initializeModule(leftMenuProtocol)
-    default:
-      return UIViewController()
+      case .Exercise:
+        return ExerciseWireFrame.initializeModule(leftMenuProtocol)
+      default:
+        return UIViewController()
       break
       
-//      case .Exercise:
-//        slideMenu.changeMainViewController(self.exerciseViewController, close: true)
 //        break
 //      case .Progression:
 //        slideMenu.changeMainViewController(self.progressionViewController, close: true)

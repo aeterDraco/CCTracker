@@ -186,7 +186,7 @@
                                     <color key="titleColor" white="1" alpha="0.67000000000000004" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="StartTraining:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HvL-fC-Aom"/>
+                                    <action selector="startTraining:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Osh-qQ-FkW"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z2B-NL-bpf">
@@ -247,7 +247,7 @@
                     <connections>
                         <outlet property="btnMenu" destination="9GO-WF-7Jc" id="KFv-hK-XC2"/>
                         <outlet property="btnSelectTraining" destination="Z2B-NL-bpf" id="1AB-qW-kwb"/>
-                        <outlet property="btnStartTraining" destination="8aZ-YX-RJ0" id="Ql6-Dd-j2r"/>
+                        <outlet property="btnStartTraining" destination="8aZ-YX-RJ0" id="EFd-qv-DfP"/>
                         <outlet property="lblNoTraining" destination="Tup-hc-8Wk" id="h27-cK-bBo"/>
                         <outlet property="tableTraining" destination="sLC-Il-oaK" id="m4J-Kp-Ndq"/>
                     </connections>
@@ -294,10 +294,10 @@
             </objects>
             <point key="canvasLocation" x="67" y="1094"/>
         </scene>
-        <!--Exercise View Controller-->
+        <!--Exercise View-->
         <scene sceneID="4p6-09-RXb">
             <objects>
-                <viewController storyboardIdentifier="ExerciseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eLY-9Z-8yf" customClass="ExerciseViewController" customModule="CCTracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExerciseViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="eLY-9Z-8yf" customClass="ExerciseView" customModule="CCTracker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7wq-EU-6gL"/>
                         <viewControllerLayoutGuide type="bottom" id="mHJ-oF-pQp"/>
@@ -311,7 +311,7 @@
                                 <animations/>
                             </imageView>
                             <button opaque="NO" alpha="0.67000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K0E-Gz-AdM" userLabel="Menu">
-                                <rect key="frame" x="20" y="20" width="30" height="34"/>
+                                <rect key="frame" x="20" y="50" width="30" height="34"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="RKe-TH-nTU"/>
@@ -319,84 +319,22 @@
                                 </constraints>
                                 <state key="normal" image="menu_white"/>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hsl-C6-8T3">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="568" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hsl-C6-8T3">
                                 <rect key="frame" x="0.0" y="127" width="414" height="609"/>
                                 <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ExerciseCell" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ExerciseCell" rowHeight="68" id="pje-nO-SPC" customClass="ExerciseCell" customModule="CCTracker" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="68"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pje-nO-SPC" id="JzK-O7-LA6">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TrainingCell" selectionStyle="default" indentationWidth="10" id="iw7-Ul-VgY" customClass="TrainingViewCell" customModule="CCTracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="568"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iw7-Ul-VgY" id="LT1-FL-d2s">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="567"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_pullUp_white" translatesAutoresizingMaskIntoConstraints="NO" id="YbZ-p5-SLI">
-                                                    <rect key="frame" x="8" y="8" width="49" height="52"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="YbZ-p5-SLI" secondAttribute="height" multiplier="49:52" id="7an-QA-IWv"/>
-                                                        <constraint firstAttribute="height" constant="52" id="mWz-Js-LAA"/>
-                                                    </constraints>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pullups Step One: Horizontal pulls" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="z1y-Aj-pF6">
-                                                    <rect key="frame" x="65" y="8" width="341" height="52"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="52" id="WvY-PM-EvK"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" name="Futura-CondensedExtraBold" family="Futura" pointSize="19"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="0.67000000000000004" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IA1-uV-YiT">
-                                                    <rect key="frame" x="8" y="8" width="398" height="30"/>
-                                                    <animations/>
-                                                    <connections>
-                                                        <action selector="selectExercise:" destination="eLY-9Z-8yf" eventType="touchUpInside" id="n0c-Bo-UiT"/>
-                                                    </connections>
-                                                </button>
-                                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NP7-fg-GhL" customClass="TrainingView" customModule="CCTracker" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="60" width="398" height="431"/>
-                                                    <animations/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                </view>
-                                            </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <constraints>
-                                                <constraint firstItem="IA1-uV-YiT" firstAttribute="leading" secondItem="JzK-O7-LA6" secondAttribute="leadingMargin" id="2Gp-9m-3bZ"/>
-                                                <constraint firstItem="YbZ-p5-SLI" firstAttribute="leading" secondItem="JzK-O7-LA6" secondAttribute="leadingMargin" id="3gP-fF-Thd"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="NP7-fg-GhL" secondAttribute="bottom" id="EO6-bI-1sW"/>
-                                                <constraint firstItem="IA1-uV-YiT" firstAttribute="top" secondItem="JzK-O7-LA6" secondAttribute="topMargin" id="L5x-CM-iAc"/>
-                                                <constraint firstItem="NP7-fg-GhL" firstAttribute="top" secondItem="IA1-uV-YiT" secondAttribute="bottom" id="Ln0-wF-I0o"/>
-                                                <constraint firstItem="z1y-Aj-pF6" firstAttribute="top" secondItem="JzK-O7-LA6" secondAttribute="topMargin" id="QYO-jd-kSf"/>
-                                                <constraint firstItem="NP7-fg-GhL" firstAttribute="leading" secondItem="JzK-O7-LA6" secondAttribute="leadingMargin" id="Tk2-In-8ar"/>
-                                                <constraint firstItem="z1y-Aj-pF6" firstAttribute="leading" secondItem="YbZ-p5-SLI" secondAttribute="trailing" constant="8" id="XKo-Rc-WHB"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="z1y-Aj-pF6" secondAttribute="bottom" id="YTz-IA-4wS"/>
-                                                <constraint firstItem="YbZ-p5-SLI" firstAttribute="top" secondItem="JzK-O7-LA6" secondAttribute="topMargin" id="a7Q-D8-RH1"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="NP7-fg-GhL" secondAttribute="trailing" id="aN0-gq-JGR"/>
-                                                <constraint firstItem="NP7-fg-GhL" firstAttribute="top" secondItem="YbZ-p5-SLI" secondAttribute="bottom" id="c7n-LU-1aa"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="IA1-uV-YiT" secondAttribute="trailing" id="eyx-D6-pCn"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="z1y-Aj-pF6" secondAttribute="trailing" id="gj0-jd-pra"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="YbZ-p5-SLI" secondAttribute="bottom" id="hk8-1L-Si9"/>
-                                            </constraints>
-                                            <variation key="default">
-                                                <mask key="constraints">
-                                                    <exclude reference="hk8-1L-Si9"/>
-                                                    <exclude reference="Ln0-wF-I0o"/>
-                                                    <exclude reference="YTz-IA-4wS"/>
-                                                </mask>
-                                            </variation>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="btnSelectCell" destination="IA1-uV-YiT" id="TbY-Z1-pQX"/>
-                                            <outlet property="imgExerciseIcon" destination="YbZ-p5-SLI" id="Mbr-Z1-Njc"/>
-                                            <outlet property="lblTitle" destination="z1y-Aj-pF6" id="tMq-4r-Xgy"/>
-                                            <outlet property="viewTraining" destination="NP7-fg-GhL" id="y1b-vd-1Nf"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -415,7 +353,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="K0E-Gz-AdM" firstAttribute="top" secondItem="7wq-EU-6gL" secondAttribute="bottom" id="4Ev-tj-iYa"/>
+                            <constraint firstItem="K0E-Gz-AdM" firstAttribute="top" secondItem="7wq-EU-6gL" secondAttribute="bottom" constant="30" id="4Ev-tj-iYa"/>
                             <constraint firstItem="W2N-eR-8NP" firstAttribute="top" secondItem="7wq-EU-6gL" secondAttribute="bottom" id="6CD-rg-ihS"/>
                             <constraint firstItem="W2N-eR-8NP" firstAttribute="width" secondItem="W2N-eR-8NP" secondAttribute="height" multiplier="2.5:1" id="AcD-ba-yra"/>
                             <constraint firstItem="W2N-eR-8NP" firstAttribute="centerX" secondItem="8fC-Au-2sq" secondAttribute="centerX" id="N4a-lK-MPO"/>

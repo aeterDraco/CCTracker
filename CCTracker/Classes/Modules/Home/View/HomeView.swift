@@ -73,11 +73,10 @@ class HomeView: UIViewController, HomeViewProtocol
   //MARK: - IBActions Methods
   @IBAction func selectTraining(sender: AnyObject) {
     self.presenter!.navigateToView(LeftMenu.Schedule)
-//    delegate?.changeViewController(LeftMenu.Schedule)
   }
   
   @IBAction func startTraining(sender: AnyObject) {
-//    delegate?.changeViewController(LeftMenu.Exercise)
+    self.presenter!.navigateToView(LeftMenu.Exercise)
   }
   
 

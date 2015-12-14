@@ -103,6 +103,8 @@ struct Movements {
   static let Bridge    = "Bridge"
   static let Handstand = "Handstand"
   static let Rest      = "Rest"
+  
+  static let AllMovements = [Movements.Pushup, Movements.Squat, Movements.Pullup, Movements.LegRaise, Bridge, Movements.Handstand]
 }
 
 struct Steps {

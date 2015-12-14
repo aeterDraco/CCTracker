@@ -15,6 +15,6 @@ class ExerciseCell: UITableViewCell {
   @IBOutlet weak var imgExerciseIcon: UIImageView!
   @IBOutlet weak var lblTitle: UILabel!
   @IBOutlet weak var btnSelectCell: UIButton!
-  @IBOutlet weak var viewTraining: TrainingView!
+//  @IBOutlet weak var viewTraining: TrainingView!
   
 }

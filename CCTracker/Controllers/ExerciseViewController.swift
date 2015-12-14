@@ -68,24 +68,24 @@ class ExerciseViewController : UIViewController, UITableViewDelegate {
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCellWithIdentifier(reuseCellIdentifier, forIndexPath: indexPath) as! ExerciseCell
+    let cell = tableView.dequeueReusableCellWithIdentifier(reuseCellIdentifier, forIndexPath: indexPath) as! TrainingViewCell
     cell.backgroundColor = UIColor.clearColor()
     let currentMovement = arrayTrainings[indexPath.row] as Movement!
     
     cell.imgExerciseIcon?.image = currentMovement.iconMovement
-    cell.lblTitle?.font = UIFont(name: Defaults.appFont, size: 15)
-    cell.btnSelectCell.tag = indexPath.row
+    cell.lblExerciseName?.font = UIFont(name: Defaults.appFont, size: 15)
+    cell.btnTraining.tag = indexPath.row
     
     let info = currentMovement.getStepInfo()
-    cell.lblTitle?.text = String(format: "%@ %@: %@", currentMovement.name, info[0], info[1])
+    cell.lblExerciseName?.text = String(format: "%@ %@: %@", currentMovement.name, info[0], info[1])
     
-    cell.viewTraining.thisSwitch.tag = indexPath.row
-    cell.viewTraining.lblTitle.text = String(format: "training view No: %d", indexPath.row)
+//    cell.viewTraining.thisSwitch.tag = indexPath.row
+//    cell.viewTraining.lblTitle.text = String(format: "training view No: %d", indexPath.row)
     
     if todaysTraining.contains(currentMovement.name) {
-      cell.lblTitle?.textColor = UIColor(red: 231/255.0, green: 169/255.0, blue: 34/255.0, alpha: 1.0)
+      cell.lblExerciseName?.textColor = UIColor(red: 231/255.0, green: 169/255.0, blue: 34/255.0, alpha: 1.0)
     } else {
-      cell.lblTitle?.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.67)
+      cell.lblExerciseName?.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.67)
     }
     
     return cell
@@ -101,9 +101,9 @@ class ExerciseViewController : UIViewController, UITableViewDelegate {
     }else {
       indexSelected = sender.tag
 
-      let exerciseView = tableExercises.cellForRowAtIndexPath(NSIndexPath.init(forRow: sender.tag, inSection: 0)) as! ExerciseCell
+      let exerciseView = tableExercises.cellForRowAtIndexPath(NSIndexPath.init(forRow: sender.tag, inSection: 0)) as! TrainingViewCell
     
-      print("open \(exerciseView.viewTraining.thisSwitch.tag) view with status \(exerciseView.viewTraining.thisSwitch.on)")
+//      print("open \(exerciseView.viewTraining.thisSwitch.tag) view with status \(exerciseView.viewTraining.thisSwitch.on)")
 
     }
 

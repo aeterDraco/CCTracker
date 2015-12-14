@@ -17,6 +17,12 @@
 		453404FA1C070730001D77AC /* HomeWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453404F91C070730001D77AC /* HomeWireFrame.swift */; };
 		4537F2D41C1866AA0011819D /* MenuContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4537F2D31C1866AA0011819D /* MenuContainerViewController.swift */; };
 		453AE5F21C0323490092E0BF /* AppDependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 453AE5F11C0323490092E0BF /* AppDependencies.swift */; };
+		4542A5411C1B1A5000776E59 /* ExerciseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542A5401C1B1A5000776E59 /* ExerciseWireFrame.swift */; };
+		4542A5431C1B1A7700776E59 /* ExerciseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542A5421C1B1A7700776E59 /* ExerciseView.swift */; };
+		4542A5451C1B1A8800776E59 /* ExerciseProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542A5441C1B1A8800776E59 /* ExerciseProtocol.swift */; };
+		4542A5471C1B1A9100776E59 /* ExercisePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542A5461C1B1A9100776E59 /* ExercisePresenter.swift */; };
+		4542A5491C1B1A9C00776E59 /* ExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542A5481C1B1A9C00776E59 /* ExerciseInteractor.swift */; };
+		4542A54C1C1B1ABF00776E59 /* ExerciseLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542A54B1C1B1ABF00776E59 /* ExerciseLocalDataManager.swift */; };
 		454E7C081BF9F849005F0EBC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E7C071BF9F849005F0EBC /* MenuViewController.swift */; };
 		4555337E1BFF34720036E3EB /* Bridge.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4555337D1BFF34720036E3EB /* Bridge.xcassets */; };
 		4567AA331C084F330099D2A8 /* ScheduleLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567AA321C084F330099D2A8 /* ScheduleLocalDataManager.swift */; };
@@ -106,6 +112,12 @@
 		453404F91C070730001D77AC /* HomeWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeWireFrame.swift; sourceTree = "<group>"; };
 		4537F2D31C1866AA0011819D /* MenuContainerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuContainerViewController.swift; sourceTree = "<group>"; };
 		453AE5F11C0323490092E0BF /* AppDependencies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDependencies.swift; sourceTree = "<group>"; };
+		4542A5401C1B1A5000776E59 /* ExerciseWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseWireFrame.swift; sourceTree = "<group>"; };
+		4542A5421C1B1A7700776E59 /* ExerciseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseView.swift; sourceTree = "<group>"; };
+		4542A5441C1B1A8800776E59 /* ExerciseProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseProtocol.swift; sourceTree = "<group>"; };
+		4542A5461C1B1A9100776E59 /* ExercisePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExercisePresenter.swift; sourceTree = "<group>"; };
+		4542A5481C1B1A9C00776E59 /* ExerciseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseInteractor.swift; sourceTree = "<group>"; };
+		4542A54B1C1B1ABF00776E59 /* ExerciseLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLocalDataManager.swift; sourceTree = "<group>"; };
 		454E7C071BF9F849005F0EBC /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Classes/Common/SlideMenu/MenuViewController.swift; sourceTree = "<group>"; };
 		4555337D1BFF34720036E3EB /* Bridge.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bridge.xcassets; sourceTree = "<group>"; };
 		4567AA321C084F330099D2A8 /* ScheduleLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleLocalDataManager.swift; sourceTree = "<group>"; };
@@ -223,6 +235,7 @@
 		4542A53A1C1ADB4600776E59 /* DataManager */ = {
 			isa = PBXGroup;
 			children = (
+				4542A54A1C1B1A9F00776E59 /* Local */,
 			);
 			path = DataManager;
 			sourceTree = "<group>";
@@ -230,6 +243,7 @@
 		4542A53B1C1ADB4D00776E59 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
+				4542A5481C1B1A9C00776E59 /* ExerciseInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -237,6 +251,7 @@
 		4542A53C1C1ADB5B00776E59 /* WireFrame */ = {
 			isa = PBXGroup;
 			children = (
+				4542A5401C1B1A5000776E59 /* ExerciseWireFrame.swift */,
 			);
 			path = WireFrame;
 			sourceTree = "<group>";
@@ -244,6 +259,7 @@
 		4542A53D1C1ADB6600776E59 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4542A5421C1B1A7700776E59 /* ExerciseView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +267,7 @@
 		4542A53E1C1ADB7100776E59 /* Protocol */ = {
 			isa = PBXGroup;
 			children = (
+				4542A5441C1B1A8800776E59 /* ExerciseProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -258,8 +275,17 @@
 		4542A53F1C1ADB7B00776E59 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				4542A5461C1B1A9100776E59 /* ExercisePresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		4542A54A1C1B1A9F00776E59 /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				4542A54B1C1B1ABF00776E59 /* ExerciseLocalDataManager.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		454E7C031BF9F63E005F0EBC /* Classes */ = {
@@ -832,8 +858,11 @@
 				4567AA331C084F330099D2A8 /* ScheduleLocalDataManager.swift in Sources */,
 				453404F71C06F67F001D77AC /* AppRouter.swift in Sources */,
 				459B89AC1BFF6CB4000C2E8E /* MenuModuleWireFrame.swift in Sources */,
+				4542A5491C1B1A9C00776E59 /* ExerciseInteractor.swift in Sources */,
+				4542A5451C1B1A8800776E59 /* ExerciseProtocol.swift in Sources */,
 				459B89BA1BFF6D55000C2E8E /* MenuModuleInteractor.swift in Sources */,
 				459B89B71BFF6D45000C2E8E /* MenuModuleLocalDataManager.swift in Sources */,
+				4542A5431C1B1A7700776E59 /* ExerciseView.swift in Sources */,
 				84BF1D051BBE740300F1F2D6 /* ExerciseCell.swift in Sources */,
 				844E0A901BBBB9C100D5A582 /* Rest.swift in Sources */,
 				84547A8C1BBA872900476EE8 /* HomeViewController.swift in Sources */,
@@ -846,10 +875,12 @@
 				4504E1B51BFF37040018A0C7 /* Bridge.swift in Sources */,
 				453404FA1C070730001D77AC /* HomeWireFrame.swift in Sources */,
 				8453CB401BBD775900221659 /* UserWorkout.swift in Sources */,
+				4542A54C1C1B1ABF00776E59 /* ExerciseLocalDataManager.swift in Sources */,
 				84BF1D081BBEC19700F1F2D6 /* TrainingView.swift in Sources */,
 				45730D211C04AC56002298E8 /* LocalStoreProtocols.swift in Sources */,
 				844E0A931BBBC26F00D5A582 /* SlideMenuController.swift in Sources */,
 				4567AA371C084F5A0099D2A8 /* ScheduleItem.swift in Sources */,
+				4542A5471C1B1A9100776E59 /* ExercisePresenter.swift in Sources */,
 				453AE5F21C0323490092E0BF /* AppDependencies.swift in Sources */,
 				45A1E2B01C05B26000EA4D03 /* HomeProtocols.swift in Sources */,
 				844E0A9F1BBC2D0A00D5A582 /* ScheduleCell.swift in Sources */,
@@ -878,6 +909,7 @@
 				84547A951BBA9A5700476EE8 /* Constants.swift in Sources */,
 				84547A9C1BBABCEC00476EE8 /* Pullup.swift in Sources */,
 				45A1E2AD1C05B1A700EA4D03 /* HomeView.swift in Sources */,
+				4542A5411C1B1A5000776E59 /* ExerciseWireFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

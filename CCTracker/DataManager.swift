@@ -30,6 +30,20 @@ class DataManager {
     }
   }
   
+  func fetchAllExercises() -> [Movement] {
+    var exerciseList = [Movement]()
+    for exerciseName in Movements.AllMovements {
+      exerciseList.append(Movement.createMovementWithName(exerciseName))
+    }
+    
+    return exerciseList
+  }
+  
+  func fetchCurrentExercisesInfo(completionHandler: CompletionHandlerType) {
+    let currentSteps = UserWorkout()
+    completionHandler(Result.Success(currentSteps))
+  }
+  
   func fetchCCworkoutWithName(workoutName: String, completionHandler: CompletionHandlerType) {
     let selectedCCTraining = trainingManager.fetchWorkoutWithName(workoutName)
     completionHandler(Result.Success(selectedCCTraining))
@@ -45,4 +59,5 @@ class DataManager {
       }
     }
   }
+  
 }

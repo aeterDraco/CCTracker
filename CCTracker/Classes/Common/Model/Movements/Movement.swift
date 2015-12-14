@@ -30,4 +30,20 @@ class Movement : NSObject{
     return info
   }
   
+  static func createMovementWithName(movementName: String) -> Movement {
+    if movementName == Movements.Pushup {
+      return Pushup()
+    } else if movementName == Movements.Squat {
+      return Squat()
+    } else if movementName == Movements.Pullup {
+      return Pullup()
+    } else if movementName == Movements.LegRaise {
+      return LegRaise()
+    } else if movementName == Movements.Bridge {
+      return Bridge()
+    } else {
+      return Handstand()
+    }
+  }
+  
 }
