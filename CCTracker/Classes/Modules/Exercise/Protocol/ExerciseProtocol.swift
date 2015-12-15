@@ -12,7 +12,9 @@ protocol ExerciseViewProtocol: class {
   var presenter: ExercisePresenterProtocol? { get set }
 
   // PRESENTER -> VIEW
-  func displayCurrentStepsInfo(currentSteps: [String: Int])
+  func updateCurrentStepsInfo(currentSteps: [String: Int])
+  func updateExerciseLists(exerciseList: [Movement])
+  func reloadExercises()
 }
 
 protocol ExerciseWireFrameProtocol: class, MenuProtocol {
@@ -46,8 +48,8 @@ protocol ExerciseInteractorInputProtocol: class {
   
   // PRESENTER -> INTERACTOR
   func fetchAllExercises(completionHandler: CompletionHandlerType)
-  func fetchCurrentSteps()
-  func fetchTodaysTraining()
+  func fetchCurrentSteps(completionHandler: CompletionHandlerType)
+  func fetchTodaysTraining(completionHandler: CompletionHandlerType)
 }
 
 protocol ExerciseLocalDataManagerInputProtocol: class {

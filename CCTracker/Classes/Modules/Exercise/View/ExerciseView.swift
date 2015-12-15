@@ -87,8 +87,16 @@ class ExerciseView: UIViewController, ExerciseViewProtocol, UITableViewDelegate,
 
   //MARK: - ExercisePresenterProtocol Methods
 
-  func displayCurrentStepsInfo(currentSteps: [String: Int]) {
+  func updateCurrentStepsInfo(currentSteps: [String: Int]) {
     self.currentSteps = currentSteps
+  }
+  
+  func updateExerciseLists(exerciseList: [Movement]) {
+    arrayTrainings = exerciseList
+  }
+  
+  func reloadExercises() {
+    self.tableExercises.reloadData()
   }
 
 }

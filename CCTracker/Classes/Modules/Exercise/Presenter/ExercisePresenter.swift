@@ -18,8 +18,13 @@ class ExercisePresenter: ExercisePresenterProtocol, ExerciseInteractorOutputProt
   //MARK: - ExercisePresenterProtocol Methods
   func updateView() {
     interactor!.fetchAllExercises() { (result) -> Void in
-      self.interactor!.fetchCurrentSteps() //retrieves the Current steps of the exercises
-      self.interactor!.fetchTodaysTraining() //retrieves the Exercises available for today
+      //retrieves the Current steps of the exercises
+      self.interactor!.fetchCurrentSteps()  { (result) -> Void in
+        //retrieves the Exercises available for today
+        self.interactor!.fetchTodaysTraining() { (result) -> Void in
+          self.view!.reloadExercises()
+        }
+      }
     }
   }
  
@@ -33,11 +38,11 @@ class ExercisePresenter: ExercisePresenterProtocol, ExerciseInteractorOutputProt
   }
   
   func didFetchCurrentSteps(currentSteps: [String:Int]) {
-  
+    self.view!.updateCurrentStepsInfo(currentSteps)
   }
   
-  func didFetchAllExercises(exerciseList: [Movment]) {
+  func didFetchAllExercises(exerciseList: [Movement]) {
     
   }
-
+  
 }
