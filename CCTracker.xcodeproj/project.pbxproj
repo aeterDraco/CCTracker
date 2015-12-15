@@ -71,8 +71,8 @@
 		84547AA21BBABD1D00476EE8 /* Handstand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547AA11BBABD1D00476EE8 /* Handstand.swift */; };
 		84547AA51BBAD8F000476EE8 /* Training.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84547AA41BBAD8F000476EE8 /* Training.swift */; };
 		84BF1D051BBE740300F1F2D6 /* ExerciseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF1D041BBE740300F1F2D6 /* ExerciseCell.swift */; };
-		84BF1D081BBEC19700F1F2D6 /* TrainingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF1D071BBEC19700F1F2D6 /* TrainingView.swift */; };
-		84BF1D0A1BBEC1AD00F1F2D6 /* TrainingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BF1D091BBEC1AD00F1F2D6 /* TrainingView.xib */; };
+		84BF1D081BBEC19700F1F2D6 /* TrainingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84BF1D071BBEC19700F1F2D6 /* TrainingViewCell.swift */; };
+		84BF1D0A1BBEC1AD00F1F2D6 /* TrainingViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84BF1D091BBEC1AD00F1F2D6 /* TrainingViewCell.xib */; };
 		84EE4C271BB97FE50098BC01 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4C261BB97FE50098BC01 /* AppDelegate.swift */; };
 		84EE4C291BB97FE50098BC01 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EE4C281BB97FE50098BC01 /* ViewController.swift */; };
 		84EE4C2C1BB97FE50098BC01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84EE4C2A1BB97FE50098BC01 /* Main.storyboard */; };
@@ -166,8 +166,8 @@
 		84547AA11BBABD1D00476EE8 /* Handstand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Handstand.swift; path = Classes/Common/Model/Movements/Handstand.swift; sourceTree = "<group>"; };
 		84547AA41BBAD8F000476EE8 /* Training.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Training.swift; path = Classes/Common/Model/Training/Training.swift; sourceTree = "<group>"; };
 		84BF1D041BBE740300F1F2D6 /* ExerciseCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExerciseCell.swift; path = Controllers/Cells/ExerciseCell.swift; sourceTree = "<group>"; };
-		84BF1D071BBEC19700F1F2D6 /* TrainingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrainingView.swift; path = Controllers/TrainingView/TrainingView.swift; sourceTree = "<group>"; };
-		84BF1D091BBEC1AD00F1F2D6 /* TrainingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrainingView.xib; path = Controllers/TrainingView/TrainingView.xib; sourceTree = "<group>"; };
+		84BF1D071BBEC19700F1F2D6 /* TrainingViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TrainingViewCell.swift; path = Controllers/TrainingView/TrainingViewCell.swift; sourceTree = "<group>"; };
+		84BF1D091BBEC1AD00F1F2D6 /* TrainingViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TrainingViewCell.xib; path = Controllers/TrainingView/TrainingViewCell.xib; sourceTree = "<group>"; };
 		84EE4C231BB97FE50098BC01 /* CCTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CCTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84EE4C261BB97FE50098BC01 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		84EE4C281BB97FE50098BC01 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -597,8 +597,8 @@
 		84BF1D061BBEC16100F1F2D6 /* ExerciseView */ = {
 			isa = PBXGroup;
 			children = (
-				84BF1D071BBEC19700F1F2D6 /* TrainingView.swift */,
-				84BF1D091BBEC1AD00F1F2D6 /* TrainingView.xib */,
+				84BF1D071BBEC19700F1F2D6 /* TrainingViewCell.swift */,
+				84BF1D091BBEC1AD00F1F2D6 /* TrainingViewCell.xib */,
 			);
 			name = ExerciseView;
 			sourceTree = "<group>";
@@ -815,7 +815,7 @@
 			files = (
 				4504E1B11BFF35410018A0C7 /* Pushup.xcassets in Resources */,
 				84EE4C341BB97FE50098BC01 /* LaunchScreen.storyboard in Resources */,
-				84BF1D0A1BBEC1AD00F1F2D6 /* TrainingView.xib in Resources */,
+				84BF1D0A1BBEC1AD00F1F2D6 /* TrainingViewCell.xib in Resources */,
 				84EE4C311BB97FE50098BC01 /* Assets.xcassets in Resources */,
 				4504E1B31BFF35530018A0C7 /* Squat.xcassets in Resources */,
 				4504E1AF1BFF35280018A0C7 /* Pullup.xcassets in Resources */,
@@ -876,7 +876,7 @@
 				453404FA1C070730001D77AC /* HomeWireFrame.swift in Sources */,
 				8453CB401BBD775900221659 /* UserWorkout.swift in Sources */,
 				4542A54C1C1B1ABF00776E59 /* ExerciseLocalDataManager.swift in Sources */,
-				84BF1D081BBEC19700F1F2D6 /* TrainingView.swift in Sources */,
+				84BF1D081BBEC19700F1F2D6 /* TrainingViewCell.swift in Sources */,
 				45730D211C04AC56002298E8 /* LocalStoreProtocols.swift in Sources */,
 				844E0A931BBBC26F00D5A582 /* SlideMenuController.swift in Sources */,
 				4567AA371C084F5A0099D2A8 /* ScheduleItem.swift in Sources */,

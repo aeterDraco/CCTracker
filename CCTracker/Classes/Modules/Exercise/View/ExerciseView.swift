@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ExerciseView: UIViewController, ExerciseViewProtocol, UITableViewDelegate, UITableViewDataSource {
+class ExerciseView: UIViewController, ExerciseViewProtocol, UITableViewDelegate, UIPickerViewDelegate, TrainingViewCellDelegate {
   
   var presenter: ExercisePresenterProtocol?
   
@@ -17,7 +17,7 @@ class ExerciseView: UIViewController, ExerciseViewProtocol, UITableViewDelegate,
   
   var arrayTrainings = [Movement]()
   var currentSteps   = [String:Int]()
-  var todaysTraining = [String]()
+  var todaysTraining = [Movement]()
   var indexSelected  = -1
   
   let reuseCellIdentifier = "TrainingCell"
@@ -31,6 +31,10 @@ class ExerciseView: UIViewController, ExerciseViewProtocol, UITableViewDelegate,
     super.viewDidLoad()
     btnMenu.addTarget(self, action: "toggleLeft", forControlEvents: UIControlEvents.TouchUpInside)
     tableExercises.tableFooterView = UIView()
+    
+    let nib = UINib(nibName: "TrainingViewCell", bundle: nil)
+    tableExercises.registerNib(nib, forCellReuseIdentifier: reuseCellIdentifier)
+
     self.presenter!.updateView()
   }
   
@@ -52,31 +56,34 @@ class ExerciseView: UIViewController, ExerciseViewProtocol, UITableViewDelegate,
   
   func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
     if indexPath.row == indexSelected {
+      print("selected cell height  \(tableExercises.frame.size.height)")
       return tableExercises.frame.size.height
     }else {
-      return 68
+      return (tableExercises.frame.size.height/CGFloat(arrayTrainings.count))
     }
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let currentMovement = arrayTrainings[indexPath.row] as Movement!
+
     let cell = tableView.dequeueReusableCellWithIdentifier(reuseCellIdentifier, forIndexPath: indexPath) as! TrainingViewCell
     cell.backgroundColor = UIColor.clearColor()
-    let currentMovement = arrayTrainings[indexPath.row] as Movement!
+    cell.setUpExerciseInfo(currentMovement, indexPathRow: indexPath.row, isTodaysTraining: todaysTraining.contains(currentMovement))
+    cell.trainingViewCellDelegate = self
+
+    cell.constraint_titleView_height.constant = (tableExercises.frame.size.height/CGFloat(arrayTrainings.count))
     
-    cell.imgExerciseIcon?.image = currentMovement.iconMovement
-    cell.lblExerciseName?.font = UIFont(name: Defaults.appFont, size: 15)
-    cell.btnTraining.tag = indexPath.row
-    
-    let info = currentMovement.getStepInfo()
-    cell.lblExerciseName?.text = String(format: "%@ %@: %@", currentMovement.name, info[0], info[1])
-    
-//    cell.viewTraining.lblTitle.text = String(format: "training view No: %d", indexPath.row)
-    
-    if todaysTraining.contains(currentMovement.name) {
-      cell.lblExerciseName?.textColor = UIColor(red: 231/255.0, green: 169/255.0, blue: 34/255.0, alpha: 1.0)
+    if indexPath.row == indexSelected {
+      cell.constraint_scrollTraining_height.constant = tableExercises.frame.size.height - cell.constraint_titleView_height.constant
+      print("tableView \(tableExercises.frame.size.height)")
+      print("celHeader \(cell.constraint_titleView_height.constant)")
+      print("exerciseDescription \(cell.constraint_scrollTraining_height.constant)")
+      
     } else {
-      cell.lblExerciseName?.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.67)
+      cell.constraint_scrollTraining_height.constant = 0
     }
+    
+    self.view.layoutIfNeeded()
     
     return cell
   }
@@ -95,8 +102,44 @@ class ExerciseView: UIViewController, ExerciseViewProtocol, UITableViewDelegate,
     arrayTrainings = exerciseList
   }
   
+  func updateTodaysTraining(todaysTraining: [Movement]) {
+    self.todaysTraining = todaysTraining
+  }
+  
   func reloadExercises() {
     self.tableExercises.reloadData()
   }
 
+  func showNoTrainingSelectedAlert() {
+    let alertController = UIAlertController(title: "No training selected", message: "You need to select a training first", preferredStyle: .Alert)
+
+    let okAction = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+    }
+    alertController.addAction(okAction)
+    
+    let scheduleAction = UIAlertAction(title: "Select Training", style: .Default){ (action) in
+      self.presenter!.navigateToView(LeftMenu.Schedule)
+    }
+    alertController.addAction(scheduleAction)
+    
+    self.presentViewController(alertController, animated: true) {
+    }
+  }
+  
+  //MARK: - TrainingViewCellDelegate Methods
+  
+  func cellHeaderTapped(tagSelected: Int) {
+    if indexSelected == tagSelected {
+      indexSelected = -1
+    }else {
+      indexSelected = tagSelected
+    }
+    tableExercises.reloadRowsAtIndexPaths([NSIndexPath(forItem: tagSelected, inSection: 0)], withRowAnimation: UITableViewRowAnimation.Automatic)
+
+    tableExercises.beginUpdates()
+    tableExercises.endUpdates()
+
+    tableExercises.scrollToRowAtIndexPath(NSIndexPath(forRow: tagSelected, inSection: 0), atScrollPosition: .Top, animated: true)
+  }
+  
 }

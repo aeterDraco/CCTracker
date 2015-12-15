@@ -14,18 +14,19 @@ class ExerciseInteractor: ExerciseInteractorInputProtocol {
   
   init(){}
   
-  func fetchCurrentSteps() {
+  func fetchCurrentSteps(completionHandler: CompletionHandlerType) {
     self.dataManager!.fetchCurrentSteps{ (result) -> Void in
       switch(result) {
       case .Success(let currentSteps as [String:Int]):
         self.presenter!.didFetchCurrentSteps(currentSteps)
+        completionHandler(Result.Success(""))
       default:
         break
       }
     }
   }
   
-  func fetchTodaysTraining() {
+  func fetchTodaysTraining(completionHandler: CompletionHandlerType) {
     let weekDay = DateManager.obtainTodaysWeekDay()
     self.dataManager!.fetchTrainingInfoForDay(weekDay) {
       (result) -> Void in
@@ -34,9 +35,11 @@ class ExerciseInteractor: ExerciseInteractorInputProtocol {
         if let unwrappedTodaysTraining = todaysTraining {
           self.presenter!.didFetchfetchTodaysTraining(unwrappedTodaysTraining as! [Movement])
         }
+        completionHandler(Result.Success(""))
         break;
       case .Failure( _):
         self.presenter!.failedFetchingTodaysTraining()
+        completionHandler(Result.Success(""))
         break;
       }
     }

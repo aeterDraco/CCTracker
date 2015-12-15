@@ -30,6 +30,11 @@ class Movement : NSObject{
     return info
   }
   
+  func getCurrentExercise() -> Exercise {
+    return exercises[currentStep]
+  }
+  
+  
   static func createMovementWithName(movementName: String) -> Movement {
     if movementName == Movements.Pushup {
       return Pushup()

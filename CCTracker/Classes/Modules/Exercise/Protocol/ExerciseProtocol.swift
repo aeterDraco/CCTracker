@@ -14,14 +14,17 @@ protocol ExerciseViewProtocol: class {
   // PRESENTER -> VIEW
   func updateCurrentStepsInfo(currentSteps: [String: Int])
   func updateExerciseLists(exerciseList: [Movement])
+  func updateTodaysTraining(todaysTraining: [Movement])
   func reloadExercises()
+  func showNoTrainingSelectedAlert()
 }
 
 protocol ExerciseWireFrameProtocol: class, MenuProtocol {
 //  static func presentExerciseModule(fromView view: AnyObject)
 
   // PRESENTER -> WIREFRAME
-  
+  func navigateToView(viewId: LeftMenu)
+
   weak var delegate: LeftMenuProtocol? {get set }
 }
 
@@ -32,6 +35,7 @@ protocol ExercisePresenterProtocol: class {
 
   // VIEW -> PRESENTER
   func updateView()
+  func navigateToView(viewId: LeftMenu)
 }
 
 protocol ExerciseInteractorOutputProtocol: class {
@@ -47,8 +51,8 @@ protocol ExerciseInteractorInputProtocol: class {
   var dataManager: ExerciseLocalDataManagerInputProtocol? { get set }
   
   // PRESENTER -> INTERACTOR
-  func fetchAllExercises(completionHandler: CompletionHandlerType)
   func fetchCurrentSteps(completionHandler: CompletionHandlerType)
+  func fetchAllExercises(completionHandler: CompletionHandlerType)
   func fetchTodaysTraining(completionHandler: CompletionHandlerType)
 }
 

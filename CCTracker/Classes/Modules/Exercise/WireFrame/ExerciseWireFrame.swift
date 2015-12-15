@@ -26,11 +26,15 @@ class ExerciseWireFrame: ExerciseWireFrameProtocol {
     presenter.interactor = interactor
     presenter.wireFrame = wireFrame
     interactor.presenter = presenter
-    interactor.localDataManager = localDataManager
+    interactor.dataManager = localDataManager
     
     wireFrame.delegate = leftMenuProtocol
     
     return view as! ExerciseView
   }
-  
+ 
+  func navigateToView(viewId: LeftMenu) {
+    self.delegate?.changeViewController(viewId)
+  }
+
 }

@@ -17,11 +17,11 @@ class ExercisePresenter: ExercisePresenterProtocol, ExerciseInteractorOutputProt
   
   //MARK: - ExercisePresenterProtocol Methods
   func updateView() {
-    interactor!.fetchAllExercises() { (result) -> Void in
+    interactor!.fetchAllExercises() { result in
       //retrieves the Current steps of the exercises
-      self.interactor!.fetchCurrentSteps()  { (result) -> Void in
+      self.interactor!.fetchCurrentSteps()  { result in
         //retrieves the Exercises available for today
-        self.interactor!.fetchTodaysTraining() { (result) -> Void in
+        self.interactor!.fetchTodaysTraining() { result in
           self.view!.reloadExercises()
         }
       }
@@ -30,11 +30,11 @@ class ExercisePresenter: ExercisePresenterProtocol, ExerciseInteractorOutputProt
  
   //MARK: - ExerciseInteractorOutputProtocol Methods
   func didFetchfetchTodaysTraining(todaysTraining: [Movement]) {
-    
+    self.view!.updateTodaysTraining(todaysTraining)
   }
   
   func failedFetchingTodaysTraining() {
-    
+    self.view!.showNoTrainingSelectedAlert()
   }
   
   func didFetchCurrentSteps(currentSteps: [String:Int]) {
@@ -42,7 +42,11 @@ class ExercisePresenter: ExercisePresenterProtocol, ExerciseInteractorOutputProt
   }
   
   func didFetchAllExercises(exerciseList: [Movement]) {
-    
+    self.view!.updateExerciseLists(exerciseList)
+  }
+  
+  func navigateToView(viewId: LeftMenu) {
+    self.wireFrame?.navigateToView(viewId)
   }
   
 }
