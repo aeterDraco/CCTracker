@@ -110,6 +110,11 @@
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DXb-47-Bsu">
                                         <rect key="frame" x="0.0" y="324" width="320" height="216"/>
                                         <animations/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="chd-gX-50l" id="ed6-gV-oOR"/>
+                                            <outlet property="delegate" destination="chd-gX-50l" id="cGX-Qc-c9G"/>
+                                        </connections>
                                     </pickerView>
                                 </subviews>
                                 <animations/>
@@ -139,12 +144,15 @@
                             <constraint firstItem="tpc-EZ-nmq" firstAttribute="top" secondItem="g5x-qQ-Syh" secondAttribute="top" id="HPg-O6-R6f"/>
                             <constraint firstAttribute="trailing" secondItem="tpc-EZ-nmq" secondAttribute="trailing" id="ICI-Go-vCK"/>
                             <constraint firstItem="tpc-EZ-nmq" firstAttribute="leading" secondItem="g5x-qQ-Syh" secondAttribute="leading" id="JOB-DG-6Pu"/>
+                            <constraint firstAttribute="trailing" secondItem="tpc-EZ-nmq" secondAttribute="trailing" id="Kwr-Tr-8MN"/>
+                            <constraint firstItem="tpc-EZ-nmq" firstAttribute="width" secondItem="g5x-qQ-Syh" secondAttribute="width" id="M2r-Ad-Dl6"/>
                             <constraint firstAttribute="height" priority="750" constant="431" id="OzK-Jf-Uwx"/>
                             <constraint firstAttribute="height" constant="431" id="RUa-iO-H2R"/>
                             <constraint firstItem="tpc-EZ-nmq" firstAttribute="leading" secondItem="g5x-qQ-Syh" secondAttribute="leading" id="SwF-kf-XNB"/>
                             <constraint firstAttribute="trailing" secondItem="tpc-EZ-nmq" secondAttribute="trailing" id="TcC-le-Gy0"/>
                             <constraint firstItem="tpc-EZ-nmq" firstAttribute="height" secondItem="g5x-qQ-Syh" secondAttribute="height" id="dmd-eO-uXC"/>
                             <constraint firstAttribute="bottom" secondItem="tpc-EZ-nmq" secondAttribute="bottom" id="i28-ov-XFb"/>
+                            <constraint firstAttribute="trailing" secondItem="tpc-EZ-nmq" secondAttribute="trailing" id="if2-ew-wCB"/>
                             <constraint firstAttribute="trailing" secondItem="tpc-EZ-nmq" secondAttribute="trailing" id="vBE-oR-cYp"/>
                         </constraints>
                         <variation key="default">
@@ -154,9 +162,12 @@
                                 <exclude reference="ACY-lt-JTl"/>
                                 <exclude reference="DpC-U5-b91"/>
                                 <exclude reference="HPg-O6-R6f"/>
+                                <exclude reference="ICI-Go-vCK"/>
                                 <exclude reference="JOB-DG-6Pu"/>
+                                <exclude reference="M2r-Ad-Dl6"/>
                                 <exclude reference="TcC-le-Gy0"/>
                                 <exclude reference="dmd-eO-uXC"/>
+                                <exclude reference="if2-ew-wCB"/>
                                 <exclude reference="vBE-oR-cYp"/>
                             </mask>
                         </variation>
@@ -192,6 +203,7 @@
                 <outlet property="constraint_titleView_height" destination="9Q9-vn-rmn" id="vhP-ia-B2L"/>
                 <outlet property="imgExerciseIcon" destination="juc-yx-qbh" id="4Xr-2G-qEQ"/>
                 <outlet property="lblExerciseName" destination="O0C-gW-0u3" id="Bt3-sF-8kk"/>
+                <outlet property="pickerSetsDone" destination="DXb-47-Bsu" id="8gP-5U-D32"/>
                 <outlet property="scrollExerciseDescription" destination="aHY-9R-UzC" id="pKH-HY-zk8"/>
                 <outlet property="trainingView" destination="tpc-EZ-nmq" id="Uhb-10-9Ui"/>
                 <outlet property="viewTitle" destination="mrB-F3-sYY" id="WNz-Nz-9TH"/>

@@ -72,7 +72,7 @@ class ExerciseViewController : UIViewController, UITableViewDelegate {
     cell.backgroundColor = UIColor.clearColor()
     let currentMovement = arrayTrainings[indexPath.row] as Movement!
     
-    cell.imgExerciseIcon?.image = currentMovement.iconMovement
+    cell.imgExerciseIcon?.image = UIImage(named: currentMovement.iconMovement)
     cell.lblExerciseName?.font = UIFont(name: Defaults.appFont, size: 15)
     cell.btnTraining.tag = indexPath.row
     

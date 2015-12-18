@@ -57,7 +57,7 @@ class HomeView: UIViewController, HomeViewProtocol
   
   func configureCell(cellToConfigure cell:HomeDisplayCell, withMovement movement:Movement) -> HomeDisplayCell{
     cell.backgroundColor = UIColor.clearColor()
-    cell.imgExercise?.image = movement.iconMovement
+    cell.imgExercise?.image = UIImage(named: movement.iconMovement)
     cell.lblExerciseName?.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.67)
     cell.lblExerciseName?.font = UIFont(name: Defaults.appFont, size: 15)
     

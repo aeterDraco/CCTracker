@@ -24,6 +24,7 @@
 		4542A5491C1B1A9C00776E59 /* ExerciseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542A5481C1B1A9C00776E59 /* ExerciseInteractor.swift */; };
 		4542A54C1C1B1ABF00776E59 /* ExerciseLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4542A54B1C1B1ABF00776E59 /* ExerciseLocalDataManager.swift */; };
 		454E7C081BF9F849005F0EBC /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454E7C071BF9F849005F0EBC /* MenuViewController.swift */; };
+		4553FC9E1C243174009E99DF /* TrainingCellDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4553FC9D1C243174009E99DF /* TrainingCellDataSource.swift */; };
 		4555337E1BFF34720036E3EB /* Bridge.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4555337D1BFF34720036E3EB /* Bridge.xcassets */; };
 		4567AA331C084F330099D2A8 /* ScheduleLocalDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567AA321C084F330099D2A8 /* ScheduleLocalDataManager.swift */; };
 		4567AA361C084F5A0099D2A8 /* ScheduleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4567AA341C084F5A0099D2A8 /* ScheduleInteractor.swift */; };
@@ -119,6 +120,7 @@
 		4542A5481C1B1A9C00776E59 /* ExerciseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseInteractor.swift; sourceTree = "<group>"; };
 		4542A54B1C1B1ABF00776E59 /* ExerciseLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExerciseLocalDataManager.swift; sourceTree = "<group>"; };
 		454E7C071BF9F849005F0EBC /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MenuViewController.swift; path = Classes/Common/SlideMenu/MenuViewController.swift; sourceTree = "<group>"; };
+		4553FC9D1C243174009E99DF /* TrainingCellDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingCellDataSource.swift; sourceTree = "<group>"; };
 		4555337D1BFF34720036E3EB /* Bridge.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Bridge.xcassets; sourceTree = "<group>"; };
 		4567AA321C084F330099D2A8 /* ScheduleLocalDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleLocalDataManager.swift; sourceTree = "<group>"; };
 		4567AA341C084F5A0099D2A8 /* ScheduleInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleInteractor.swift; sourceTree = "<group>"; };
@@ -244,6 +246,7 @@
 			isa = PBXGroup;
 			children = (
 				4542A5481C1B1A9C00776E59 /* ExerciseInteractor.swift */,
+				4553FC9D1C243174009E99DF /* TrainingCellDataSource.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -891,6 +894,7 @@
 				45A1E2B71C05B65700EA4D03 /* HomeInteractor.swift in Sources */,
 				84547A901BBA91C600476EE8 /* Movement.swift in Sources */,
 				84EE4C2F1BB97FE50098BC01 /* CCTracker.xcdatamodeld in Sources */,
+				4553FC9E1C243174009E99DF /* TrainingCellDataSource.swift in Sources */,
 				4567AA391C084F610099D2A8 /* SchedulePresenter.swift in Sources */,
 				4567AA3F1C084F730099D2A8 /* ScheduleWireFrame.swift in Sources */,
 				84EE4C291BB97FE50098BC01 /* ViewController.swift in Sources */,

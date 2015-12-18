@@ -69,7 +69,7 @@ class HomeViewController: UIViewController  {
     cell.backgroundColor = UIColor.clearColor()
     let currentMovement = todaysTraining[indexPath.row]
     
-    cell.imgExercise?.image = currentMovement.iconMovement
+    cell.imgExercise?.image = UIImage(named: currentMovement.iconMovement)
     cell.lblExerciseName?.textColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 0.67)
     cell.lblExerciseName?.font = UIFont(name: Defaults.appFont, size: 15)
     

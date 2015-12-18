@@ -7,19 +7,18 @@
 //
 
 import Foundation
-import UIKit
 
 class Movement : NSObject{
   
   var name: String
   var exercises = [Exercise]()
-  var iconMovement: UIImage
+  var iconMovement: String
   var currentStep:Int
   
   init (movementName name:String, movementIcon icon:String, currentStep:Int){
     self.name = name
     self.currentStep = currentStep
-    iconMovement = UIImage(named: icon)!
+    iconMovement = icon
   }
 
 
@@ -33,7 +32,6 @@ class Movement : NSObject{
   func getCurrentExercise() -> Exercise {
     return exercises[currentStep]
   }
-  
   
   static func createMovementWithName(movementName: String) -> Movement {
     if movementName == Movements.Pushup {

@@ -12,9 +12,10 @@ protocol TrainingViewCellDelegate {
   func cellHeaderTapped(tagSelected: Int)
 }
 
-class TrainingViewCell: UITableViewCell, UITableViewDataSource, UIPickerViewDataSource, {
+class TrainingViewCell: UITableViewCell,  UIPickerViewDataSource, UIPickerViewDelegate{
 
   
+  @IBOutlet weak var pickerSetsDone: UIPickerView!
   @IBOutlet weak var scrollExerciseDescription: UIScrollView!
   @IBOutlet weak var viewTitle: UIView!
   @IBOutlet weak var lblExerciseName: UILabel!
@@ -37,7 +38,7 @@ class TrainingViewCell: UITableViewCell, UITableViewDataSource, UIPickerViewData
   }
   
   func setUpExerciseInfo(movementInfo: Movement, indexPathRow: Int, isTodaysTraining: Bool) {
-    imgExerciseIcon?.image = movementInfo.iconMovement
+    imgExerciseIcon?.image = UIImage(named: movementInfo.iconMovement)
     lblExerciseName?.font = UIFont(name: Defaults.appFont, size: 15)
     btnTraining.tag = indexPathRow
     
@@ -52,7 +53,6 @@ class TrainingViewCell: UITableViewCell, UITableViewDataSource, UIPickerViewData
     
     viewTitle.backgroundColor = isTodaysTraining ? self.colorExerciseToday:self.colorExerciseNotToday
     
-    
     let currentExercise = movementInfo.getCurrentExercise()
     let imageName = currentExercise.imgDescriptions[0]
     imgTutorial = UIImageView(frame: CGRectMake(0, 0, scrollExerciseDescription.frame.width, scrollExerciseDescription.frame.height))
@@ -63,15 +63,20 @@ class TrainingViewCell: UITableViewCell, UITableViewDataSource, UIPickerViewData
     scrollExerciseDescription.addSubview(imgTutorial!)
     
     
-    
   }
   
   //MARK: - UIPickerDelegates Methods
+
   
   func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
-    
+    return 3
+  }
+  
+  func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    return 30
   }
 
+  
   
 //  @IBOutlet var view: UIView!
 //    @IBOutlet weak var lblTitle: UILabel!
